@@ -14,21 +14,27 @@ header {
     color: white;
     z-index: 100;
     position: fixed;
-    height: 12%;
+    height: 8vw;
     width: 100vw;
     top: 0;
     left: 0;
     background-color: rgba(5, 21, 50, 0.5);
     font-family: 'Quicksand', sans-serif;
-    font-size: 2em;
+    font-size: 3vw;
 }
 header img {
-    border-radius: 100px;
-    height: 6%;
-    margin: 4%;
+
+    border-radius: 100vw;
+    height: 6vw;
+    margin: 1vw;
+    margin-right: 30vw;
 }
-.acceuil {
-    margin-right: 10%;
+header p {
+    margin: 2vw;
+    max-width: 5vw;
+    text-align: right;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 /* #endregion header */
