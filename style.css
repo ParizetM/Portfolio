@@ -93,11 +93,15 @@ header p:hover {
 .body_L1_left img {
     float: right;
 }
+.blue_fade {
+
+}
 .body_L1_box {
-    margin-top: 20%;
-    background-color: black;
+    margin-top: -20%;
+    background-color: rgb(159, 39, 39);
     max-width: 100%;
     height: 200%;
+    border-radius: 70px;
 }
 
 /* #endregion body_L1 */
