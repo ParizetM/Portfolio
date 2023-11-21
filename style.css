@@ -94,6 +94,7 @@ header p:hover {
     float: right;
 }
 .blue_fade {
+    margin-top: 5%;
     background: linear-gradient(to top,rgb(255,255,255),transparent);
     height: 20%;
 }
