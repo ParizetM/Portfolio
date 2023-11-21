@@ -1,0 +1,58 @@
+/* dire comment et pourquoi on a fait ca */
+
+body{
+    margin: 0%;
+    
+}
+header {
+    display: grid;
+    font-family: 'Asap', sans-serif;
+    grid: 1fr auto / auto 1fr auto;
+    background-image: url(IMG/fond.png);
+    background-repeat: repeat;
+    font-family: 'Quicksand', sans-serif;
+}
+header > * {
+    margin: 0%;
+}
+.header_left{
+    grid-row: 1;
+    grid-column: 1;
+    display: none;
+
+}
+.fond_header {
+    grid-row: 1;
+    grid-column: 2;
+    background-image: url(IMG/BG_P1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1080px;
+    float: left;
+}
+.fond_header h1{
+    background:linear-gradient(to right, #ffd8f7, #4e4e4e) ;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 10%;
+    font-size: 150px;
+    text-align: center;
+}
+.header_right{
+    grid-row: 1;
+    grid-column: 3;
+    display: none;
+}
+.header_left img {
+    float: right;
+}
+@media screen and (min-width: 1921px) {
+    .header_left, .header_right {
+        display: block;
+        /* Adjust the width as needed */
+    }
+    header {
+        grid: 1fr auto / auto 1920px auto;
+    }
+}
