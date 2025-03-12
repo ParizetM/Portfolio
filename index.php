@@ -13,44 +13,8 @@
   </head>
   <body class="bg-[#242424] text-gray-300 dark">
     <div>
-      <header
-        class="flex justify-between items-center p-6 bg-[#3C3C3C] shadow-lg"
-      >
-        <div class="flex items-center gap-6">
-          <a href="https://agfagoofay.fr">
-            <img src="assets/icons/arrow_back.svg" alt="" />
-          </a>
-          <a
-            href="https://martin-parizet.agfagoofay.fr"
-            class="flex items-center gap-6 hover:scale-105 transform hover:shadow-lg hover:bg-[#242424] p-2 rounded-full transition duration-300"
-          >
-            <img
-              src="assets/icons/Avatar.svg"
-              alt="Avatar"
-              class="rounded-full w-10 h-10 border-2 border-gray-200"
-            />
-            <p class="text-white text-2xl font-bold">Martin Parizet</p>
-          </a>
-        </div>
-        <nav class="flex items-center">
-          <a
-            href="index.html"
-            class="text-gray-400 ml-4 hover:text-white transition duration-300"
-            >Accueil</a
-          >
-          <a
-            href="contact.html"
-            class="text-gray-400 ml-4 hover:text-white transition duration-300"
-            >Contact</a
-          >
-          <a
-            href="CV.html"
-            class="text-gray-400 ml-4 hover:text-white transition duration-300"
-            >CV</a
-          >
-          <div class="ml-4"></div>
-        </nav>
-      </header>
+      <?php include 'header.php' ?>
+
       <section class="bg-white py-8 antialiased dark:bg-[#242424] md:py-16">
         <div
           class=" flex justify-between mx-8"
@@ -90,7 +54,8 @@
           <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 md:pl-12">
               <p class="text-lg leading-relaxed">
-                Bonjour! Je suis Martin, un développeur passionné . J'adore
+                Bonjour !
+                 Je suis Martin, un développeur passionné. J'adore
                 créer des expériences utilisateur intuitives et esthétiques. Mon
                 parcours m'a permis de travailler sur divers projets
                 passionnants, et je suis toujours à la recherche de nouveaux
