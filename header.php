@@ -8,9 +8,9 @@
                     href="index.php"
                     class="flex items-center gap-6 hover:scale-105 transform hover:shadow-lg hover:bg-[#242424] p-2 rounded-full transition duration-300">
                     <img
-                        src="assets/icons/Avatar.svg"
+                        src="assets/icons/Avatar-rounded.svg"
                         alt="Avatar"
-                        class="rounded-full w-10 h-10 border-2 border-gray-200" />
+                        class=" w-10 h-10" />
                     <p class="text-white text-2xl font-bold">Martin Parizet</p>
                 </a>
             </div>
