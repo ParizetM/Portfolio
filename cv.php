@@ -9,10 +9,10 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;700&display=swap"
         rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="assets/css/styles.css" />
-</head>
+    <link rel="stylesheet" href="assets/css/outpouts.css" />
+    </head>
 
-<body class="bg-[#242424] text-gray-300 dark h-full">
+<body class="bg-stone-800 text-gray-300 dark h-full">
     <div>
     <?php include 'header.php' ?>
     </div>

@@ -9,22 +9,19 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;700&display=swap"
     rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/outpouts.css" />
 </head>
 
-<body class="bg-[#242424] text-gray-300 dark">
+<body class="bg-stone-800 text-gray-300 dark">
   <?php include 'header.php' ?>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white">
+  <div class="grid grid-cols-1 md:grid-cols-3 md:grid gap-4">
 
 
 
-    <div class="bg-[#242424] text-gray-300 col-2">
-      <section class="bg-white py-8 antialiased dark:bg-[#242424] md:py-16">
-        <div
-          class=" flex justify-between mx-8">
-          <div
-            class="content-center justify-self-start md:col-span-7 md:text-start">
+    <div class="bg-stone-800 col-span-2 text-gray-300 ">
+      <section class=" flex flex-col justify-center py-8 antialiased dark:bg-stone-800 md:py-16">
+
+          <div class="content-center justify-self-start md:col-span-7 md:text-start">
             <h1
               class=" text-center mb-4 text-4xl font-extrabold leading-none tracking-tight dark:text-white md:max-w-2xl md:text-5xl xl:text-6xl">
               Martin Parizet
@@ -35,20 +32,22 @@
             </p>
             <div class="w-full flex justify-center">
               <a
-                href="#" class="gap-6 hover:scale-105 transform hover:shadow-lg bg-linear-to-r/decreasing from-[#FF4900] via-[#FF4900] to-[#FFB822] p-4 rounded-full transition duration-300 w-fit">
+                href="#" class="gap-6 transform hover:shadow-lg bg-gradient-to-r from-orange-600 from-30% to-orange-600 to-80% p-4 rounded-full transition transition-discrete duration-300 w-fit hover:from-orange-600 hover:to-yellow-600 ">
                 Contactez-moi
               </a>
             </div>
-          </div>
+
         </div>
       </section>
     </div>
-    <div class="bg-[#242424] text-gray-300 col-2">
-      <ul>
-        <li>------ à propos</li>
-        <li>------ Mon expérience</li>
-        <li>------ </li>
-      </ul>
+    <div class="bg-stone-800 text-gray-300 col-3">
+      <div class="sticky top-50 font-bold">
+        <ul>
+          <li class="flex items-center gap-4"><div class="h-1 w-12 bg-gradient-to-r from-orange-600/50 from-30% to-yellow-400/50 to-60% rounded-lg"></div>à propos</li>
+          <li class="flex items-center gap-4"><div class="h-1 w-12 bg-gradient-to-r from-orange-600/50 from-30% to-yellow-400/50 to-60% rounded-lg"></div>Mon expérience</li>
+          <li class="flex items-center gap-4"><div class="h-1 w-12 bg-gradient-to-r from-orange-600/50 from-30% to-yellow-400/50 to-60% rounded-lg"></div>Contact</li>
+        </ul>
+      </div>
     </div>
 
 
@@ -150,7 +149,7 @@
     </div>
   </section>
   <section
-    class="w-4/5 mx-auto bg-[#242424] text-center pb-20 my-36 h-[400px] rounded-2xl">
+    class="w-4/5 mx-auto bg-stone-800 text-center pb-20 my-36 h-[400px] rounded-2xl">
     <div class="text-center">
       <h2 class="text-white text-4xl font-bold mb-4 pt-12">
         Our Standout Features<span
@@ -257,7 +256,7 @@
     </div>
   </section>
   <section
-    class="mesh_gradient bg-[#242424] text-center p-20 my-12 h-[400px] rounded-2xl">
+    class="mesh_gradient bg-stone-800 text-center p-20 my-12 h-[400px] rounded-2xl">
     <div class="text-center">
       <h2 class="text-white text-5xl font-bold mb-4 pt-12">
         Step into the Magic<span
@@ -273,7 +272,7 @@
       </button>
     </div>
   </section>
-  <footer class="bg-[#242424] px-20 pt-20 pb-4">
+  <footer class="bg-stone-800 px-20 pt-20 pb-4">
     <div class="flex flex-wrap justify-between">
       <div>
         <h3 class="text-white text-2xl font-bold mb-4">Le Caca</h3>

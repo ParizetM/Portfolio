@@ -1,3 +1,26 @@
+@import "tailwindcss";
+
+/*
+COULEURS UTILISEES
+#FF4900
+orange-600
+
+#FFB822
+yellow-400
+
+#3C3C3C
+stone-700
+
+#242424
+stone-800
+
+
+
+
+
+*/
+
+
 * {
     box-sizing: border-box;
 }

@@ -1,12 +1,12 @@
 <header
-            class="flex justify-between items-center p-6 bg-[#3C3C3C] shadow-lg">
+            class="flex justify-between items-center p-6 bg-stone-700 shadow-lg">
             <div class="flex items-center gap-6">
                 <a href="https://agfagoofay.fr">
                     <img src="assets/icons/arrow_back.svg" alt="" />
                 </a>
                 <a
                     href="index.php"
-                    class="flex items-center gap-6 hover:scale-105 transform hover:shadow-lg hover:bg-[#242424] p-2 rounded-full transition duration-300">
+                    class="flex items-center gap-6 hover:scale-105 transform hover:shadow-lg hover:bg-stone-800 p-2 rounded-full transition duration-300">
                     <img
                         src="assets/icons/Avatar-rounded.svg"
                         alt="Avatar"
