@@ -20,7 +20,7 @@
             href="index.php"
             class="text-gray-400 ml-4 hover:text-white transition duration-300">Accueil</a>
         <a
-            href="contact.html"
+            href="index.php#contact"
             class="text-gray-400 ml-4 hover:text-white transition duration-300">Contact</a>
         <a
             href="CV.php"

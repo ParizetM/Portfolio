@@ -19,10 +19,17 @@ stone-800
 
 
 */
-
+@theme {
+    --color-orange-600: #FF4900;
+    --color-yellow-400: #FFB822;
+    --color-stone-700: #3C3C3C;
+    --color-stone-800: #242424;
+}
 
 * {
+    
     box-sizing: border-box;
+    border-style: solid;
     @apply transition-discrete duration-300;
 }
 
@@ -48,4 +55,8 @@ body {
     z-index: -1;
     width: 300px;
     height: 300px;
+}
+.border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
 }
