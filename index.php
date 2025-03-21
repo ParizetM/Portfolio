@@ -21,7 +21,7 @@
 
 
     <div class="col-span-3 text-gray-300 ">
-      <section id="about" class="flex flex-col items-center justify-center py-8 antialiased md:py-16">
+      <section id="about" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
         <div class="text-center">
           <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
             Martin Parizet
@@ -37,67 +37,82 @@
         </div>
       </section>
 
-      <section id="parcours" class="grid grid-cols-[3fr_1fr_3fr] gap-y-4 items-center justify-center py-8 antialiased md:py-16">
-        <h1 class="text-center mb-8 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl col-span-3">
+      <!--
+########     ###    ########   ######   #######  ##     ## ########   ######  
+##     ##   ## ##   ##     ## ##    ## ##     ## ##     ## ##     ## ##    ## 
+##     ##  ##   ##  ##     ## ##       ##     ## ##     ## ##     ## ##       
+########  ##     ## ########  ##       ##     ## ##     ## ########   ######  
+##        ######### ##   ##   ##       ##     ## ##     ## ##   ##         ## 
+##        ##     ## ##    ##  ##    ## ##     ## ##     ## ##    ##  ##    ## 
+##        ##     ## ##     ##  ######   #######   #######  ##     ##  ######  
+-->
+
+
+
+
+      <section id="parcours" class="flex flex-wrap md:grid grid-cols-[3fr_1fr_3fr] gap-y-4 items-center justify-center py-8 antialiased md:py-16 section">
+        <h1 class="text-center mb-8 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl col-span-3 w-full">
           Mon parcours
         </h1>
-        <div>
-          <div class="p-2 border-r-2 border-dashed text-right float-right bg-stone-600/50 ml-6 rounded-l-lg w-fit">
-            <p class="text-orange-500 text-sm">Septembre 2024 - Actuellement</p>
-            <h2 class="text-lg font-bold text-white">
-              <span class="text-gray-300 text-base">ALTERNANCE </span> <br>
-              Atlantis Montaza <span class="text-gray-300 text-sm">Trignac </span>
+        <div class="ml-5 w-full md:w-auto">
+          <div class="p-2 border-r-2 border-dashed text-right float-right bg-stone-600/50 rounded-l-lg w-full pr-5 md:pr-2">
+            <p class="text-orange-500 text-sm md:text-base">Septembre 2024 - Actuellement</p>
+            <h2 class="text-lg font-bold text-white md:text-xl">
+              <span class="text-gray-300 text-base md:text-lg">ALTERNANCE </span> <br>
+              Atlantis Montaza <span class="text-gray-300 text-sm md:text-base">Trignac </span>
             </h2>
-            <p class="text-gray-400">Dev Web PGI interne</p>
+            <p class="text-gray-400 text-sm md:text-base">Dev Web PGI interne</p>
           </div>
         </div>
-        <div class="flex p-2 justify-center items-center bg-stone-600/50 h-full rounded-r-lg">
+        <div class="p-2 justify-center items-center bg-stone-600/50 h-full rounded-r-lg hidden md:flex">
           <img src="assets/icons/montaza.svg" alt="" class="w-15 h-15 m-1">
         </div>
-        <div></div>
-        <div></div>
+        <div class="w-0"></div>
+        <div class="w-0"></div>
 
-
-        <div class="flex p-2 justify-center items-center bg-stone-600/50 h-full rounded-l-lg">
+        <div class=" p-2 justify-center items-center bg-stone-600/50 h-full rounded-l-lg hidden md:flex">
           <img src="assets/icons/fireverif.svg" alt="" class="w-15 h-15 m-1 ml-6">
         </div>
-        <div class="block p-2 border-l-2 border-dashed bg-stone-600/50 mr-6 rounded-r-lg w-fit">
-          <p class="text-orange-500 text-sm">10/06/2024 - 19/07/2024</p>
-          <h2 class="text-lg font-bold text-white">
-            <span class="text-gray-300 text-base">STAGE </span> <br>
-            PIXELCRÉATION <span class="text-gray-300 text-sm">Savenay </span>
-          </h2>
-          <p class="text-gray-400">Dev Web - application pompiers FiREVERIF</p>
-        </div>
-
-
-        <div title="BTS Service Informatiques aux Organisations option Solutions Logicielles des Applications Métiers">
-          <div class="p-2 border-r-2 border-dashed text-right float-right bg-stone-600/50 ml-6 rounded-l-lg w-fit">
-            <p class="text-orange-500 text-sm">Septembre 2023 - Actuellement</p>
-            <h2 class="text-lg font-bold text-white">
-              <span class="text-gray-300 text-base">FORMATION </span> <br>
-              BTS SIO option SLAM <span class="text-gray-300 text-sm"><br/>Institut Informatique Appliquée<br/>Saint-Nazaire </span>
+        <div class="mr-5 w-full md:w-auto">
+          <div class="block p-2 border-l-2 border-dashed bg-stone-600/50 mr-6 rounded-r-lg w-full pl-5 md:pl-2">
+            <p class="text-orange-500 text-sm md:text-base">10/06/2024 - 19/07/2024</p>
+            <h2 class="text-lg font-bold text-white md:text-xl">
+              <span class="text-gray-300 text-base md:text-lg">STAGE </span> <br>
+              PIXELCRÉATION <span class="text-gray-300 text-sm md:text-base">Savenay </span>
             </h2>
-            <p class="text-gray-400">Service Informatiques aux Organisations - Développement </p>
+            <p class="text-gray-400 text-sm md:text-base">Dev Web - application pompiers pour le sdis 44 FIREVERIF</p>
           </div>
         </div>
-        <div class="flex p-2 justify-center items-center bg-stone-600/50 h-full rounded-r-lg" title="BTS Service Informatiques aux Organisations option Solutions Logicielles des Applications Métiers">
-        <img src="assets/icons/logo-iia-200x200.png" alt="" class="w-15 h-15 m-1 rounded-full">
+
+        <div title="BTS Service Informatiques aux Organisations option Solutions Logicielles des Applications Métiers" class="ml-5 w-full md:w-auto">
+          <div class="p-2 border-r-2 border-dashed text-right float-right bg-stone-600/50 ml-6 rounded-l-lg w-full pr-5 md:pr-2">
+            <p class="text-orange-500 text-sm md:text-base">Septembre 2023 - Actuellement</p>
+            <h2 class="text-lg font-bold text-white md:text-xl">
+              <span class="text-gray-300 text-base md:text-lg">FORMATION </span> <br>
+              BTS SIO option SLAM <span class="text-gray-300 text-sm md:text-base"><br />Institut Informatique Appliquée<br />Saint-Nazaire </span>
+            </h2>
+            <p class="text-gray-400 text-sm md:text-base">Service Informatiques aux Organisations - Développement </p>
+          </div>
+        </div>
+        <div class=" p-2 justify-center items-center bg-stone-600/50 h-full rounded-r-lg hidden md:flex" title="BTS Service Informatiques aux Organisations option Solutions Logicielles des Applications Métiers">
+          <img src="assets/icons/logo-iia-200x200.png" alt="" class="w-15 h-15 m-1 rounded-full md:w-20 md:h-20 sm:w-12 sm:h-12 ">
         </div>
         <div></div>
         <div></div>
 
-
-        <div class="flex p-2 justify-center items-center bg-stone-600/50 h-full rounded-l-lg">
+        <div class=" p-2 justify-center items-center bg-stone-600/50 h-full rounded-l-lg hidden md:flex">
           <img src="assets/icons/fireverif.svg" alt="" class="w-15 h-15 m-1 ml-6">
         </div>
-        <div class="block p-2 border-l-2 border-dashed bg-stone-600/50 mr-6 rounded-r-lg w-fit">
-          <p class="text-orange-500 text-sm">2023</p>
-          <h2 class="text-lg font-bold text-white">
-            <span class="text-gray-300 text-base">FORMATION </span> <br>
-            Bac Général <span class="text-gray-300 text-sm">Guérande </span>
-          </h2>
-          <p class="text-gray-400">Maths - Physique-Chimie - Science de l'ingénieur</p>
+        <div class="mr-5 w-full md:w-auto">
+
+          <div class="block p-2 border-l-2 border-dashed bg-stone-600/50 mr-6 rounded-r-lg w-full pl-5 md:pl-2">
+            <p class="text-orange-500 text-sm md:text-base">2023</p>
+            <h2 class="text-lg font-bold text-white md:text-xl">
+              <span class="text-gray-300 text-base md:text-lg">FORMATION </span> <br>
+              Bac Général <span class="text-gray-300 text-sm md:text-base">Guérande </span>
+            </h2>
+            <p class="text-gray-400 text-sm md:text-base">Maths - Physique-Chimie - Science de l'ingénieur</p>
+          </div>
         </div>
       </section>
 
@@ -112,13 +127,6 @@
 ##     ## ##     ## ##   ###      ##        ##    ##  ##        ##       ##    ##   ##  ##       ##   ### ##    ## ##       
 ##     ##  #######  ##    ##      ######## ##      ## ##        ######## ##     ## #### ######## ##    ##  ######  ######## 
 
-########  ########   #######  ######## ########  ######   ######  ####  #######  ##    ## ##    ## ######## ##       ##       ########  
-##     ## ##     ## ##     ## ##       ##       ##    ## ##    ##  ##  ##     ## ###   ## ###   ## ##       ##       ##       ##        
-##     ## ##     ## ##     ## ##       ##       ##       ##        ##  ##     ## ####  ## ####  ## ##       ##       ##       ##        
-########  ########  ##     ## ######   ######    ######   ######   ##  ##     ## ## ## ## ## ## ## ######   ##       ##       ######    
-##        ##   ##   ##     ## ##       ##             ##       ##  ##  ##     ## ##  #### ##  #### ##       ##       ##       ##        
-##        ##    ##  ##     ## ##       ##       ##    ## ##    ##  ##  ##     ## ##   ### ##   ### ##       ##       ##       ##        
-##        ##     ##  #######  ##       ########  ######   ######  ####  #######  ##    ## ##    ## ######## ######## ######## ######## 
  -->
 
 
@@ -127,48 +135,88 @@
 
 
 
+      <div id="EST" class="section">
+        <section class="flex flex-col items-center justify-center py-8 antialiased md:py-16 ">
+          <div class="section" id="experience_professionnelle">
+            <h1 class="text-center mb-8 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl xl:text-6xl ">
+              Mon expérience <br>
+              <span class="text-orange-600 text-3xl md:text-4xl xl:text-5xl">Mes projets<br>
+                Professionnels</span>
+            </h1>
+            <div class="">
+              <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
+                <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=1">
+                  <h2 class="text-2xl font-bold text-white flex flex-wrap"><img src="assets/icons/montaza.svg" alt="" class="w-6 mr-2">DÉVELOPPEMENT <span class="whitespace-nowrap">&nbsp;D’UN ERP</span></h2>
+                  <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
+                </a>
+                <small class="text-orange-600 ml-2">Septembre 2024 - Actuellement</small>
+                <p class="text-gray-400 ml-2">ATLANTIS MONTAZA - TRIGNAC</p>
+                <p class="text-gray-400 ml-2">développer en autonomie : analyse des besoins, concevoir et implémenter</p>
+                <div class="flex flex-wrap gap-4 mt-4">
+                  <?php
+                  $nom_techno = "PHP";
+                  include 'base.php';
+                  $nom_techno = "Laravel";
+                  include 'base.php';
+                  $nom_techno = "PostgreSQL";
+                  include 'base.php';
+                  $nom_techno = "JavaScript";
+                  include 'base.php';
+                  $nom_techno = "TailwindCSS";
+                  include 'base.php';
+                  ?>
+                </div>
+              </div>
 
-      <section id="experience" class="flex flex-col items-center justify-center py-8 antialiased md:py-16">
-        <div class="">
-          <h1 class="text-center mb-8 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl ">
-            Mon expérience professionnelle
-          </h1>
-          <div class="">
-            <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
-              <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=1">
-                <h2 class="text-2xl font-bold text-white">DÉVELOPPEMENT D’UN ERP</h2>
-                <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
-              </a>
-              <p class="text-gray-400 ml-2">ATLANTIS MONTAZA - TRIGNAC</p>
-              <p class="text-gray-400 ml-2">développer en autonomie : analyse des besoins, concevoir et implémenter</p>
-              <div class="flex flex-wrap gap-4 mt-4">
-                <?php
-                $nom_techno = "PHP";
-                include 'base.php';
-                $nom_techno = "Laravel";
-                include 'base.php';
-                $nom_techno = "MySQL";
-                include 'base.php';
-                $nom_techno = "JavaScript";
-                include 'base.php';
-                $nom_techno = "TailwindCSS";
-                include 'base.php';
-                ?>
+
+
+              <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
+                <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
+                  <h2 class="text-2xl font-bold text-white flex flex-wrap"><img src="assets/icons/fireverif.svg" alt="" class="w-6 mr-2"><span class="whitespace-nowrap">APPLICATION WEB &nbsp;</span>FIREVERIF - STAGE</h2>
+                  <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
+                </a>
+                <small class="text-orange-600 ml-2">10 juin 2024 - 19 juillet 2024</small>
+                <p class="text-gray-400 ml-2">PIXELCRÉATION - SAVENAY</p>
+                <p class="text-gray-400 ml-2">Dévelloper en équipe : suivie d'un cahier des charges, Back-end</p>
+                <div class="flex flex-wrap gap-4 mt-4">
+                  <?php
+                  $nom_techno = "PHP";
+                  include 'base.php';
+                  $nom_techno = "HTML";
+                  include 'base.php';
+                  $nom_techno = "JavaScript";
+                  include 'base.php';
+                  $nom_techno = "MySQL";
+                  include 'base.php';
+                  ?>
+                </div>
               </div>
             </div>
+          </div>
+
+
+          <div>
+            <h1 class="text-center mb-8 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl xl:text-6xl section" id="experience_etudiante">
+              <br>
+              <span class="text-orange-600 text-3xl md:text-4xl xl:text-5xl">Mes projets<br>
+                Étudiants</span>
+            </h1>
             <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
               <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
-                <h2 class="text-2xl font-bold text-white flex">APPLICATION WEB<img src="assets/icons/fireverif.svg" alt="" class="w-6 ml-2">FIREVERIF - STAGE</h2>
+                <h2 class="text-2xl font-bold text-white flex flex-wrap items-center "><img src="projets/Des-mineurs/medias/Des-mineurs.png" alt="helphub logo" class="w-6 mr-2"><span class="whitespace-nowrap">Jeu WEB Des Mineurs&nbsp;</span></h2>
                 <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
               </a>
-              <p class="text-gray-400 ml-2">PIXELCRÉATION - SAVENAY</p>
-              <p class="text-gray-400 ml-2">Technologies : PHP, HTML, JavaScript, MySQL</p>
+              <small class="text-orange-600 ml-2">Février 2024</small>
+              <p class="text-gray-400 ml-2">Institut Informatique Appliquée - Saint-Nazaire</p>
+              <p class="text-gray-400 ml-2">Dévelloper en équipe : imaginer un jeu simple, Back-end & Front-end</p>
               <div class="flex flex-wrap gap-4 mt-4">
                 <?php
                 $nom_techno = "PHP";
                 include 'base.php';
                 $nom_techno = "HTML";
                 include 'base.php';
+                $nom_techno = "CSS";
+                include 'base.php';
                 $nom_techno = "JavaScript";
                 include 'base.php';
                 $nom_techno = "MySQL";
@@ -176,9 +224,37 @@
                 ?>
               </div>
             </div>
+            <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
+              <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
+                <h2 class="text-2xl font-bold text-white flex flex-wrap items-center "><img src="projets/HelpHub/medias/helphub_logo_dark.svg" alt="helphub logo" class="w-6 mr-2"><span class="whitespace-nowrap">APPLICATION WEB Ticketing&nbsp;</span>HelpHub</h2>
+                <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
+              </a>
+              <small class="text-orange-600 ml-2">Février 2024</small>
+              <p class="text-gray-400 ml-2">Institut Informatique Appliquée - Saint-Nazaire</p>
+              <p class="text-gray-400 ml-2">Dévelloper en équipe : suivie d'un cahier des charges, Back-end & Front-end</p>
+              <div class="flex flex-wrap gap-4 mt-4">
+                <?php
+                $nom_techno = "PHP";
+                include 'base.php';
+                $nom_techno = "HTML";
+                include 'base.php';
+                $nom_techno = "CSS";
+                include 'base.php';
+                $nom_techno = "JavaScript";
+                include 'base.php';
+                $nom_techno = "MySQL";
+                include 'base.php';
+                ?>
+              </div>
+            </div>
+
+
+
+
           </div>
-        </div>
-      </section>
+
+        </section>
+      </div>
 
 
 
@@ -195,7 +271,7 @@
 ##    ## ##     ## ##   ###    ##    ##     ## ##    ##    ##    
  ######   #######  ##    ##    ##    ##     ##  ######     ##     -->
 
-      <section id="contact" class="flex flex-col items-center justify-center py-8 antialiased md:py-16">
+      <section id="contact" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
 
         <div class="">
           <h1 class=" text-center mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
@@ -234,7 +310,7 @@
 
 
 
-    <div class="text-gray-300 col-4 hidden md:block border-l-2 border-stone-700 h-[70vh] sticky top-30 p-6">
+    <div class="text-gray-300 col-4 hidden md:block border-l-2 border-stone-700 h-[70vh] sticky top-30 p-6 pr-0">
       <div class="sticky top-50 font-bold">
         <ul>
           <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
@@ -245,6 +321,25 @@
             <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
             <a href="#parcours" class="nav-link whitespace-nowrap"> Mon parcours
             </a>
+          </li>
+          <li class="flex flex-col hover:opacity-100 group">
+            <div class="flex items-center gap-4">
+              <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
+              <a href="#EST" class=" whitespace-nowrap">Mon expérience</a>
+            </div>
+            <ul class="ml-6">
+              <li class="flex items-center gap-2 hover:opacity-100 group">
+                <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8"></div>
+                <a href="#experience_professionnelle" class="nav-link-2 whitespace-nowrap">Professionnelle
+
+                </a>
+              </li>
+              <li class="flex items-center gap-2 hover:opacity-100 group">
+                <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8"></div>
+                <a href="#experience_etudiante" class="nav-link-2 whitespace-nowrap">Étudiante
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
             <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
