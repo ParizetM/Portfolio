@@ -8,50 +8,57 @@ document.addEventListener("DOMContentLoaded", () => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     let id = entry.target.getAttribute("id");
+
+                    // Gestion des navLinks
                     navLinks.forEach((link) => {
-                        const parentLi = link.parentElement;
-                        parentLi.classList.remove("opacity-100");
-                        parentLi.querySelector("div").classList.remove("w-20");
+                        let parentLi = link.closest("li");
+                        if (parentLi) {
+                            parentLi.classList.remove("opacity-100");
+                            parentLi.querySelector("div").classList.remove("w-20");
+                        }
                         if (link.getAttribute("href").includes(id)) {
-                            parentLi.classList.add("opacity-100");
-                            parentLi.querySelector("div").classList.add("w-20");
+                            if (parentLi) {
+                                parentLi.classList.add("opacity-100");
+                                parentLi.querySelector("div").classList.add("w-20");
+                            }
                         }
                     });
-                }
-            });
-        },
-        {
-            root: null, // viewport
-            rootMargin: "0px",
-            threshold: 0.5, // 50% visible to activate
-        }
-    );
-    const observer2 = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    let id = entry.target.getAttribute("id");
+
+                    // Gestion des navLinks2
                     navLinks2.forEach((link) => {
-                        const parentLi = link.parentElement;
-                        parentLi.classList.remove("opacity-100");
-                        parentLi.querySelector("div").classList.remove("w-8");
+                        let parentLi = link.closest("li");
+                        if (parentLi) {
+                            parentLi.classList.remove("opacity-100");
+                            parentLi.querySelector("div").classList.remove("w-8");
+
+                            // Gestion du li au-dessus du ul
+                            let upperLi = parentLi.closest("ul")?.closest("li");
+                            if (upperLi) {
+                                upperLi.classList.remove("opacity-100");
+                            }
+                        }
                         if (link.getAttribute("href").includes(id)) {
-                            parentLi.classList.add("opacity-100");
-                            parentLi.querySelector("div").classList.add("w-8");
+                            if (parentLi) {
+                                parentLi.classList.add("opacity-100");
+                                parentLi.querySelector("div").classList.add("w-8");
+
+                                // Gestion du li au-dessus du ul
+                                let upperLi = parentLi.closest("ul")?.closest("li");
+                                if (upperLi) {
+                                    upperLi.classList.add("opacity-100");
+                                }
+                            }
                         }
                     });
                 }
             });
         },
         {
-            root: null, // viewport
+            root: null,
             rootMargin: "0px",
-            threshold: 0.5, // 50% visible to activate
+            threshold: 0.5,
         }
     );
-    sections.forEach((section) => {
-        observer2.observe(section);
-    });
 
     sections.forEach((section) => {
         observer.observe(section);

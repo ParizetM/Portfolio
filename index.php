@@ -101,7 +101,7 @@
         <div></div>
 
         <div class=" p-2 justify-center items-center bg-stone-600/50 h-full rounded-l-lg hidden md:flex">
-          <img src="assets/icons/fireverif.svg" alt="" class="w-15 h-15 m-1 ml-6">
+          <img src="assets/icons/galilee.png" alt="" class="w-15 h-15 m-1 rounded-full md:w-20 md:h-20 sm:w-12 sm:h-12 ">
         </div>
         <div class="mr-5 w-full md:w-auto">
 
@@ -135,8 +135,7 @@
 
 
 
-      <div id="EST" class="section">
-        <section class="flex flex-col items-center justify-center py-8 antialiased md:py-16 ">
+        <section id="experience" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
           <div class="section" id="experience_professionnelle">
             <h1 class="text-center mb-8 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl xl:text-6xl ">
               Mon expérience <br>
@@ -254,7 +253,6 @@
           </div>
 
         </section>
-      </div>
 
 
 
@@ -322,20 +320,20 @@
             <a href="#parcours" class="nav-link whitespace-nowrap"> Mon parcours
             </a>
           </li>
-          <li class="flex flex-col hover:opacity-100 group">
+          <li class="flex flex-col opacity-50 hover:opacity-100 group">
             <div class="flex items-center gap-4">
               <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
               <a href="#EST" class=" whitespace-nowrap">Mon expérience</a>
             </div>
-            <ul class="ml-6">
-              <li class="flex items-center gap-2 hover:opacity-100 group">
-                <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8"></div>
+            <ul class="ml-8 font-normal">
+              <li class="flex items-center gap-2 hover:opacity-100 opacity-50 group">
+                <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8 mr-2"></div>
                 <a href="#experience_professionnelle" class="nav-link-2 whitespace-nowrap">Professionnelle
 
                 </a>
               </li>
-              <li class="flex items-center gap-2 hover:opacity-100 group">
-                <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8"></div>
+              <li class="flex items-center gap-2 opacity-50 hover:opacity-100 group">
+                <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8 mr-2"></div>
                 <a href="#experience_etudiante" class="nav-link-2 whitespace-nowrap">Étudiante
                 </a>
               </li>
