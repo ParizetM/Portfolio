@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".section");
-    const navLinks = document.querySelectorAll(".nav-link");
+    const navLinks = document.querySelectorAll(".nav-link1");
     const navLinks2 = document.querySelectorAll(".nav-link-2");
+    const upperLi = document.querySelector("#parent_li");
 
     const observer = new IntersectionObserver(
         (entries) => {
@@ -14,40 +15,42 @@ document.addEventListener("DOMContentLoaded", () => {
                         let parentLi = link.closest("li");
                         if (parentLi) {
                             parentLi.classList.remove("opacity-100");
-                            parentLi.querySelector("div").classList.remove("w-20");
+                            parentLi.querySelector("div")?.classList.remove("w-20");
                         }
                         if (link.getAttribute("href").includes(id)) {
                             if (parentLi) {
                                 parentLi.classList.add("opacity-100");
-                                parentLi.querySelector("div").classList.add("w-20");
+                                parentLi.querySelector("div")?.classList.add("w-20");
                             }
                         }
                     });
 
                     // Gestion des navLinks2
+                    upperLi.classList.remove("opacity-100");
+                    upperLi
+                        .querySelector("div")
+                        ?.querySelector("div")
+                        ?.classList.remove("w-20");
                     navLinks2.forEach((link) => {
                         let parentLi = link.closest("li");
-                        if (parentLi) {
-                            parentLi.classList.remove("opacity-100");
-                            parentLi.querySelector("div").classList.remove("w-8");
-
-                            // Gestion du li au-dessus du ul
-                            let upperLi = parentLi.closest("ul")?.closest("li");
-                            if (upperLi) {
-                                upperLi.classList.remove("opacity-100");
-                            }
-                        }
+                    
                         if (link.getAttribute("href").includes(id)) {
                             if (parentLi) {
                                 parentLi.classList.add("opacity-100");
-                                parentLi.querySelector("div").classList.add("w-8");
-
-                                // Gestion du li au-dessus du ul
-                                let upperLi = parentLi.closest("ul")?.closest("li");
-                                if (upperLi) {
-                                    upperLi.classList.add("opacity-100");
-                                }
+                                parentLi.querySelector("div")?.classList.add("w-8");
                             }
+                    
+                            // Gestion du li au-dessus du ul
+                            if (upperLi && upperLi.contains(parentLi)) {
+                                upperLi.classList.add("opacity-100");
+                                upperLi
+                                    .querySelector("div")
+                                    ?.querySelector("div")
+                                    ?.classList.add("w-20");
+                            }
+                        } else if (parentLi) {
+                            parentLi.classList.remove("opacity-100");
+                            parentLi.querySelector("div")?.classList.remove("w-8");
                         }
                     });
                 }

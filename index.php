@@ -135,86 +135,53 @@
 
 
 
-        <section id="experience" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
-          <div class="section" id="experience_professionnelle">
-            <h1 class="text-center mb-8 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl xl:text-6xl ">
-              Mon expérience <br>
-              <span class="text-orange-600 text-3xl md:text-4xl xl:text-5xl">Mes projets<br>
-                Professionnels</span>
-            </h1>
-            <div class="">
-              <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
-                <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=1">
-                  <h2 class="text-2xl font-bold text-white flex flex-wrap"><img src="assets/icons/montaza.svg" alt="" class="w-6 mr-2">DÉVELOPPEMENT <span class="whitespace-nowrap">&nbsp;D’UN ERP</span></h2>
-                  <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
-                </a>
-                <small class="text-orange-600 ml-2">Septembre 2024 - Actuellement</small>
-                <p class="text-gray-400 ml-2">ATLANTIS MONTAZA - TRIGNAC</p>
-                <p class="text-gray-400 ml-2">développer en autonomie : analyse des besoins, concevoir et implémenter</p>
-                <div class="flex flex-wrap gap-4 mt-4">
-                  <?php
-                  $nom_techno = "PHP";
-                  include 'base.php';
-                  $nom_techno = "Laravel";
-                  include 'base.php';
-                  $nom_techno = "PostgreSQL";
-                  include 'base.php';
-                  $nom_techno = "JavaScript";
-                  include 'base.php';
-                  $nom_techno = "TailwindCSS";
-                  include 'base.php';
-                  ?>
-                </div>
-              </div>
-
-
-
-              <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
-                <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
-                  <h2 class="text-2xl font-bold text-white flex flex-wrap"><img src="assets/icons/fireverif.svg" alt="" class="w-6 mr-2"><span class="whitespace-nowrap">APPLICATION WEB &nbsp;</span>FIREVERIF - STAGE</h2>
-                  <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
-                </a>
-                <small class="text-orange-600 ml-2">10 juin 2024 - 19 juillet 2024</small>
-                <p class="text-gray-400 ml-2">PIXELCRÉATION - SAVENAY</p>
-                <p class="text-gray-400 ml-2">Dévelloper en équipe : suivie d'un cahier des charges, Back-end</p>
-                <div class="flex flex-wrap gap-4 mt-4">
-                  <?php
-                  $nom_techno = "PHP";
-                  include 'base.php';
-                  $nom_techno = "HTML";
-                  include 'base.php';
-                  $nom_techno = "JavaScript";
-                  include 'base.php';
-                  $nom_techno = "MySQL";
-                  include 'base.php';
-                  ?>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div>
-            <h1 class="text-center mb-8 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl xl:text-6xl section" id="experience_etudiante">
-              <br>
-              <span class="text-orange-600 text-3xl md:text-4xl xl:text-5xl">Mes projets<br>
-                Étudiants</span>
-            </h1>
+      <section id="experience" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
+        <div class="section" id="experience_professionnelle">
+          <h1 class="text-center mb-8 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl xl:text-6xl ">
+            Mon expérience <br>
+            <span class="text-orange-600 text-3xl md:text-4xl xl:text-5xl">Mes projets<br>
+              Professionnels</span>
+          </h1>
+          <div class="">
             <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
-              <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
-                <h2 class="text-2xl font-bold text-white flex flex-wrap items-center "><img src="projets/Des-mineurs/medias/Des-mineurs.png" alt="helphub logo" class="w-6 mr-2"><span class="whitespace-nowrap">Jeu WEB Des Mineurs&nbsp;</span></h2>
+              <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=1">
+                <h2 class="text-2xl font-bold text-white flex flex-wrap"><img src="assets/icons/montaza.svg" alt="" class="w-6 mr-2">DÉVELOPPEMENT <span class="whitespace-nowrap">&nbsp;D’UN ERP</span></h2>
                 <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
               </a>
-              <small class="text-orange-600 ml-2">Février 2024</small>
-              <p class="text-gray-400 ml-2">Institut Informatique Appliquée - Saint-Nazaire</p>
-              <p class="text-gray-400 ml-2">Dévelloper en équipe : imaginer un jeu simple, Back-end & Front-end</p>
+              <small class="text-orange-600 ml-2">Septembre 2024 - Actuellement</small>
+              <p class="text-gray-400 ml-2">ATLANTIS MONTAZA - TRIGNAC</p>
+              <p class="text-gray-400 ml-2">développer en autonomie : analyse des besoins, concevoir et implémenter</p>
+              <div class="flex flex-wrap gap-4 mt-4">
+                <?php
+                $nom_techno = "PHP";
+                include 'base.php';
+                $nom_techno = "Laravel";
+                include 'base.php';
+                $nom_techno = "PostgreSQL";
+                include 'base.php';
+                $nom_techno = "JavaScript";
+                include 'base.php';
+                $nom_techno = "TailwindCSS";
+                include 'base.php';
+                ?>
+              </div>
+            </div>
+
+
+
+            <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
+              <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
+                <h2 class="text-2xl font-bold text-white flex flex-wrap"><img src="assets/icons/fireverif.svg" alt="" class="w-6 mr-2"><span class="whitespace-nowrap">APPLICATION WEB &nbsp;</span>FIREVERIF - STAGE</h2>
+                <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
+              </a>
+              <small class="text-orange-600 ml-2">10 juin 2024 - 19 juillet 2024</small>
+              <p class="text-gray-400 ml-2">PIXELCRÉATION - SAVENAY</p>
+              <p class="text-gray-400 ml-2">Dévelloper en équipe : suivie d'un cahier des charges, Back-end</p>
               <div class="flex flex-wrap gap-4 mt-4">
                 <?php
                 $nom_techno = "PHP";
                 include 'base.php';
                 $nom_techno = "HTML";
-                include 'base.php';
-                $nom_techno = "CSS";
                 include 'base.php';
                 $nom_techno = "JavaScript";
                 include 'base.php';
@@ -223,36 +190,69 @@
                 ?>
               </div>
             </div>
-            <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
-              <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
-                <h2 class="text-2xl font-bold text-white flex flex-wrap items-center "><img src="projets/HelpHub/medias/helphub_logo_dark.svg" alt="helphub logo" class="w-6 mr-2"><span class="whitespace-nowrap">APPLICATION WEB Ticketing&nbsp;</span>HelpHub</h2>
-                <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
-              </a>
-              <small class="text-orange-600 ml-2">Février 2024</small>
-              <p class="text-gray-400 ml-2">Institut Informatique Appliquée - Saint-Nazaire</p>
-              <p class="text-gray-400 ml-2">Dévelloper en équipe : suivie d'un cahier des charges, Back-end & Front-end</p>
-              <div class="flex flex-wrap gap-4 mt-4">
-                <?php
-                $nom_techno = "PHP";
-                include 'base.php';
-                $nom_techno = "HTML";
-                include 'base.php';
-                $nom_techno = "CSS";
-                include 'base.php';
-                $nom_techno = "JavaScript";
-                include 'base.php';
-                $nom_techno = "MySQL";
-                include 'base.php';
-                ?>
-              </div>
+          </div>
+        </div>
+
+
+        <div>
+          <h1 class="text-center mb-8 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-5xl xl:text-6xl section" id="experience_etudiante">
+            <br>
+            <span class="text-orange-600 text-3xl md:text-4xl xl:text-5xl">Mes projets<br>
+              Étudiants</span>
+          </h1>
+          <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
+            <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
+              <h2 class="text-2xl font-bold text-white flex flex-wrap items-center "><img src="projets/Des-mineurs/medias/Des-mineurs.png" alt="helphub logo" class="w-6 mr-2"><span class="whitespace-nowrap">Jeu WEB Des Mineurs&nbsp;</span></h2>
+              <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
+            </a>
+            <small class="text-orange-600 ml-2">Février 2024</small>
+            <p class="text-gray-400 ml-2">Institut Informatique Appliquée - Saint-Nazaire</p>
+            <p class="text-gray-400 ml-2">Dévelloper en équipe : imaginer un jeu simple, Back-end & Front-end</p>
+            <div class="flex flex-wrap gap-4 mt-4">
+              <?php
+              $nom_techno = "PHP";
+              include 'base.php';
+              $nom_techno = "HTML";
+              include 'base.php';
+              $nom_techno = "CSS";
+              include 'base.php';
+              $nom_techno = "JavaScript";
+              include 'base.php';
+              $nom_techno = "MySQL";
+              include 'base.php';
+              ?>
             </div>
-
-
-
-
+          </div>
+          <div class="mb-4 border-2 border-gray-500 rounded-lg p-6 max-w-2xl mx-auto ">
+            <a class="flex items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer hover:scale-105" title="Afficher le projet" href="projets/index.php?projet=2">
+              <h2 class="text-2xl font-bold text-white flex flex-wrap items-center "><img src="projets/HelpHub/medias/helphub_logo_dark.svg" alt="helphub logo" class="w-6 mr-2"><span class="whitespace-nowrap">APPLICATION WEB Ticketing&nbsp;</span>HelpHub</h2>
+              <img src="assets/icons/open_in_new.svg" alt="" class="w-6 h-6 fill-white">
+            </a>
+            <small class="text-orange-600 ml-2">Février 2024</small>
+            <p class="text-gray-400 ml-2">Institut Informatique Appliquée - Saint-Nazaire</p>
+            <p class="text-gray-400 ml-2">Dévelloper en équipe : suivie d'un cahier des charges, Back-end & Front-end</p>
+            <div class="flex flex-wrap gap-4 mt-4">
+              <?php
+              $nom_techno = "PHP";
+              include 'base.php';
+              $nom_techno = "HTML";
+              include 'base.php';
+              $nom_techno = "CSS";
+              include 'base.php';
+              $nom_techno = "JavaScript";
+              include 'base.php';
+              $nom_techno = "MySQL";
+              include 'base.php';
+              ?>
+            </div>
           </div>
 
-        </section>
+
+
+
+        </div>
+
+      </section>
 
 
 
@@ -313,23 +313,23 @@
         <ul>
           <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
             <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
-            <a href="#about" class="nav-link whitespace-nowrap">À propos</a>
+            <a href="#about" class="nav-link1 whitespace-nowrap">À propos</a>
           </li>
           <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
             <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
-            <a href="#parcours" class="nav-link whitespace-nowrap"> Mon parcours
+            <a href="#parcours" class="nav-link1 whitespace-nowrap"> Mon parcours
             </a>
           </li>
-          <li class="flex flex-col opacity-50 hover:opacity-100 group">
+          <li class="flex flex-col opacity-50 hover:opacity-100 group" id="parent_li">
             <div class="flex items-center gap-4">
               <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
-              <a href="#EST" class=" whitespace-nowrap">Mon expérience</a>
+              <a href="#experience" class=" whitespace-nowrap">Mon expérience</a>
             </div>
             <ul class="ml-8 font-normal">
-              <li class="flex items-center gap-2 hover:opacity-100 opacity-50 group">
-                <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8 mr-2"></div>
-                <a href="#experience_professionnelle" class="nav-link-2 whitespace-nowrap">Professionnelle
 
+              <li class="flex items-center gap-2 opacity-50 hover:opacity-100 group">
+                <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8 mr-2"></div>
+                <a href="#experience_professionnelle" class="nav-link-2 whitespace-nowrap">professionnelle
                 </a>
               </li>
               <li class="flex items-center gap-2 opacity-50 hover:opacity-100 group">
@@ -337,11 +337,12 @@
                 <a href="#experience_etudiante" class="nav-link-2 whitespace-nowrap">Étudiante
                 </a>
               </li>
+
             </ul>
           </li>
           <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
             <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
-            <a href="#contact" class="nav-link ">Contact</a>
+            <a href="#contact" class="nav-link1 ">Contact</a>
           </li>
         </ul>
         <div class="flex items-center mt-4 gap-2">
