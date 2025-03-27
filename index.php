@@ -30,7 +30,7 @@
             PORTFOLIO 2025 - développeur
           </p>
           <p class="max-w-2xl mx-auto text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl p-6">
-            Développeur web, je crée des sites et applications web. Actuellement en BTS SIO SLAM à l'IIA Saint-Nazaire, je cherche à améliorer mes compétences et à participer à des projets intéressants. </p>
+            Développeur, je crée des sites web et applications. Actuellement en BTS SIO SLAM à l'IIA Saint-Nazaire, je cherche à améliorer mes compétences et à participer à des projets intéressants. </p>
           <a href="#contact" class="bg-gradient-to-r from-orange-600 to-orange-600 py-2 px-4 rounded-full transition duration-300 hover:shadow-lg hover:to-yellow-400">
             Contactez-moi
           </a>
