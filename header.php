@@ -23,7 +23,7 @@
             href="index.php#contact"
             class="text-gray-400 ml-4 hover:text-white transition duration-300">Contact</a>
         <a
-            href="CV.php"
+            href="cv.php"
             class="text-gray-400 ml-4 hover:text-white transition duration-300">CV</a>
         <div class="ml-4"></div>
     </nav>

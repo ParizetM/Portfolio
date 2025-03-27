@@ -353,6 +353,10 @@
             <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-10 h-10 mt-4 transition duration-300 opacity-50 hover:opacity-100" />
           </a>
         </div>
+        <div class="flex flex-col gap-2 mt-4 text-orange-600">
+          <a href="mailto:parizetm@free.fr" class="opacity-50 hover:opacity-100">parizetm@free.fr</a>
+          <a href="tel:+33651051650" class="opacity-50 hover:opacity-100">+33 (0)6 51 05 16 50</a>
+        </div>
       </div>
     </div>
   </div>
