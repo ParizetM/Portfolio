@@ -19,6 +19,9 @@
         <a
             href="index.php"
             class="text-gray-400 ml-4 hover:text-white transition duration-300">Accueil</a>
+            <a
+            href="index.php?page=projets"
+            class="text-gray-400 ml-4 hover:text-white transition duration-300">Mes projets</a>
         <a
             href="index.php#contact"
             class="text-gray-400 ml-4 hover:text-white transition duration-300">Contact</a>
