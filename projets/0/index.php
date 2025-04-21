@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Montaza - Portfolio Martin Parizet</title>
     <!-- Tailwind is assumed to be included in your main template -->
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5/dist/photoswipe.css">
+    <script src="https://unpkg.com/photoswipe@5/dist/photoswipe.umd.min.js"></script>
+
 </head>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"></div>
 
 <body class="bg-stone-900 text-white">
     <!-- Background circles for visual interest -->
@@ -46,8 +50,10 @@
 
         <!-- Project details -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            <div class="lg:col-span-2">
-                <img src="projets/0/medias/dashboard.png" alt="Capture d'écran de Montaza" class="rounded-lg shadow-lg w-full object-cover h-auto">
+            <div class="lg:col-span-2" id="gallery1">
+                <a href="projets/0/medias/dashboard.png" data-pswp-width="1600" data-pswp-height="850" target="_blank">
+                    <img src="projets/0/medias/dashboard.png" alt="Capture d'écran de Montaza" class="rounded-lg shadow-lg w-full object-cover h-auto hover:opacity-75 transition duration-300">
+                </a>
             </div>
             <div class="bg-stone-800/50 p-6 rounded-lg">
                 <h2 class="text-2xl font-bold mb-4 text-orange-500">Détails du projet</h2>
@@ -155,11 +161,21 @@
         <!-- Screenshots/Gallery -->
         <section class="mb-12">
             <h2 class="text-3xl font-bold mb-6 text-white">Galerie</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <img src="projets/0/medias/demande_de_prix.png" alt="Interface de demande de prix" class="rounded-lg shadow-lg w-full h-64 object-cover hover:opacity-75 transition duration-300">
-                <img src="projets/0/medias/matieres.png" alt="Gestion des stocks" class="rounded-lg shadow-lg w-full h-64 object-cover hover:opacity-75 transition duration-300">
-                <img src="projets/0/medias/societe.png" alt="affichage d'une societe" class="rounded-lg shadow-lg w-full h-64 object-cover hover:opacity-75 transition duration-300">
+            <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="projets/0/medias/demande_de_prix.png" data-pswp-width="1600" data-pswp-height="850" target="_blank">
+                    <img src="projets/0/medias/demande_de_prix.png" alt="Interface de demande de prix"
+                        class="rounded-lg shadow-lg w-full h-64 object-cover hover:opacity-75 transition duration-300">
+                </a>
+                <a href="projets/0/medias/matieres.png" data-pswp-width="1600" data-pswp-height="850" target="_blank">
+                    <img src="projets/0/medias/matieres.png" alt="Gestion des stocks"
+                        class="rounded-lg shadow-lg w-full h-64 object-cover hover:opacity-75 transition duration-300">
+                </a>
+                <a href="projets/0/medias/societe.png" data-pswp-width="1600" data-pswp-height="850" target="_blank">
+                    <img src="projets/0/medias/societe.png" alt="Affichage d'une société"
+                        class="rounded-lg shadow-lg w-full h-64 object-cover hover:opacity-75 transition duration-300">
+                </a>
             </div>
+
         </section>
 
         <!-- Challenges and Solutions -->
@@ -226,6 +242,27 @@
             </a>
         </div>
     </div>
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.min.js';
+        import PhotoSwipe from 'https://unpkg.com/photoswipe@5/dist/photoswipe.esm.min.js';
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#gallery',
+            children: 'a',
+            pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.min.js')
+        });
+        const lightbox1 = new PhotoSwipeLightbox({
+            gallery: '#gallery1',
+            children: 'a',
+            pswpModule: () => import('https://unpkg.com/photoswipe@5/dist/photoswipe.esm.min.js')
+        });
+        lightbox.on('uiElement:open', () => {
+            document.body.style.overflow = 'hidden'; // Disable scrolling on the body
+        });
+        lightbox.init();
+        lightbox1.init();
+    </script>
+
 </body>
 
 </html>
