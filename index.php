@@ -24,7 +24,7 @@ if (($handle = fopen("projets.csv", "r")) !== false) {
 <body class="bg-stone-800 text-gray-300 ">
   <?php include 'header.php';
   $page = $_GET['page'] ?? 'home';
-  include $page . '.php';
+  include 'route.php';
  include 'footer.php' ?>
 </body>
 <script src="assets/js/scripts.js"></script>
