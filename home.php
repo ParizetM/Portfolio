@@ -167,7 +167,187 @@ include 'get-projets.php';
 
 
 
+      <!-- 
+       ######   #######  ##     ## ########  ######## ######## ######## ##    ##  ######  ########  ######  
+      ##    ## ##     ## ###   ### ##     ## ##          ##    ##       ###   ## ##    ## ##       ##    ## 
+      ##       ##     ## #### #### ##     ## ##          ##    ##       ####  ## ##       ##       ##       
+      ##       ##     ## ## ### ## ########  ######      ##    ######   ## ## ## ##       ######    ######  
+      ##       ##     ## ##     ## ##        ##          ##    ##       ##  #### ##       ##             ## 
+      ##    ## ##     ## ##     ## ##        ##          ##    ##       ##   ### ##    ## ##       ##    ## 
+       ######   #######  ##     ## ##        ########    ##    ######## ##    ##  ######  ########  ######  
+      -->
 
+      <section id="competences" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
+        <h1 class="text-center mb-8 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
+          Technologies & Outils
+        </h1>
+        
+        <div class="max-w-4xl mx-auto">
+          <!-- Tech bubbles that float in a pattern -->
+          <div class="skill-container relative h-[400px] w-full overflow-hidden rounded-xl bg-gradient-to-br from-stone-900/50 to-stone-800/30 p-4">
+            <div class="skill-bubble" style="--size: 100px; --x: 20%; --y: 30%; --delay: 0s;">
+              <img src="assets/icons/javascript.svg" alt="JavaScript" class="skill-icon">
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-bubble" style="--size: 90px; --x: 70%; --y: 20%; --delay: 1s;">
+              <img src="assets/icons/csharp.svg" alt="C#" class="skill-icon">
+              <span>C#</span>
+            </div>
+            <div class="skill-bubble" style="--size: 80px; --x: 40%; --y: 60%; --delay: 2s;">
+              <img src="assets/icons/php.svg" alt="PHP" class="skill-icon">
+              <span>PHP</span>
+            </div>
+            <div class="skill-bubble" style="--size: 110px; --x: 80%; --y: 70%; --delay: 0.5s;">
+              <img src="assets/icons/docker.svg" alt="Docker" class="skill-icon">
+              <span>Docker</span>
+            </div>
+            <div class="skill-bubble" style="--size: 95px; --x: 30%; --y: 80%; --delay: 1.5s;">
+              <img src="assets/icons/vscode.svg" alt="VSCode" class="skill-icon">
+              <span>VSCode</span>
+            </div>
+            <div class="skill-bubble" style="--size: 85px; --x: 65%; --y: 50%; --delay: 2.5s;">
+              <img src="assets/icons/visualstudio.svg" alt="Visual Studio" class="skill-icon">
+              <span>Visual Studio</span>
+            </div>
+            <div class="skill-bubble" style="--size: 75px; --x: 15%; --y: 55%; --delay: 0.7s;">
+              <img src="assets/icons/wpf.svg" alt="WPF" class="skill-icon">
+              <span>WPF</span>
+            </div>
+            <div class="skill-bubble" style="--size: 90px; --x: 50%; --y: 25%; --delay: 1.7s;">
+              <img src="assets/icons/tailwind.svg" alt="Tailwind" class="skill-icon">
+              <span>Tailwind</span>
+            </div>
+            <div class="skill-bubble" style="--size: 80px; --x: 90%; --y: 40%; --delay: 2.2s;">
+              <img src="assets/icons/laravel.svg" alt="Laravel" class="skill-icon">
+              <span>Laravel</span>
+            </div>
+            <div class="skill-bubble" style="--size: 70px; --x: 25%; --y: 15%; --delay: 0.3s;">
+              <img src="assets/icons/git.svg" alt="Git" class="skill-icon">
+              <span>Git</span>
+            </div>
+          </div>
+          
+          <!-- Categorized skills -->
+          <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="skill-category">
+              <h3 class="text-orange-600 font-bold text-xl mb-4">Langages</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag"><img src="assets/icons/javascript.svg" alt="JavaScript" class="tag-icon">JavaScript</span>
+                <span class="skill-tag"><img src="assets/icons/php.svg" alt="PHP" class="tag-icon">PHP</span>
+                <span class="skill-tag"><img src="assets/icons/csharp.svg" alt="C#" class="tag-icon">C#</span>
+                <span class="skill-tag"><img src="assets/icons/html5.svg" alt="HTML" class="tag-icon">HTML/CSS</span>
+                <span class="skill-tag"><img src="assets/icons/sql.svg" alt="SQL" class="tag-icon">SQL</span>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3 class="text-orange-600 font-bold text-xl mb-4">Frameworks</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag"><img src="assets/icons/laravel.svg" alt="Laravel" class="tag-icon">Laravel</span>
+                <span class="skill-tag"><img src="assets/icons/wpf.svg" alt="WPF" class="tag-icon">WPF</span>
+                <span class="skill-tag"><img src="assets/icons/react.svg" alt="React" class="tag-icon">React</span>
+                <span class="skill-tag"><img src="assets/icons/tailwind.svg" alt="Tailwind" class="tag-icon">Tailwind</span>
+                <span class="skill-tag"><img src="assets/icons/bootstrap.svg" alt="Bootstrap" class="tag-icon">Bootstrap</span>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3 class="text-orange-600 font-bold text-xl mb-4">Outils</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag"><img src="assets/icons/vscode.svg" alt="VS Code" class="tag-icon">VS Code</span>
+                <span class="skill-tag"><img src="assets/icons/visualstudio.svg" alt="Visual Studio" class="tag-icon">Visual Studio</span>
+                <span class="skill-tag"><img src="assets/icons/docker.svg" alt="Docker" class="tag-icon">Docker</span>
+                <span class="skill-tag"><img src="assets/icons/git.svg" alt="Git" class="tag-icon">Git</span>
+                <span class="skill-tag"><img src="assets/icons/figma.svg" alt="Figma" class="tag-icon">Figma</span>
+                <span class="skill-tag"><img src="assets/icons/mysql.svg" alt="MySQL" class="tag-icon">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <style>
+          .skill-container {
+            perspective: 500px;
+          }
+          
+          .skill-bubble {
+            position: absolute;
+            width: var(--size);
+            height: var(--size);
+            top: var(--y);
+            left: var(--x);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(234, 88, 12, 0.2), rgba(250, 204, 21, 0.2));
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(234, 88, 12, 0.1);
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+            animation-delay: var(--delay);
+            transition: all 0.3s;
+            padding: 0.5rem;
+          }
+          
+          .skill-icon {
+            width: calc(var(--size) / 3);
+            height: calc(var(--size) / 3);
+            margin-bottom: 4px;
+            filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+          }
+          
+          .skill-bubble span {
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            font-size: calc(var(--size) / 7);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          }
+          
+          .skill-bubble:hover {
+            background: linear-gradient(135deg, rgba(234, 88, 12, 0.4), rgba(250, 204, 21, 0.4));
+            transform: scale(1.1);
+            z-index: 10;
+          }
+          
+          @keyframes float {
+            0% { transform: translateZ(0); }
+            50% { transform: translateZ(30px); }
+            100% { transform: translateZ(0); }
+          }
+          
+          .skill-category {
+            background-color: rgba(28, 25, 23, 0.3);
+            border-radius: 0.5rem;
+            padding: 1rem;
+          }
+          
+          .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(28, 25, 23, 0.7);
+            color: #d1d5db;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            border: 1px solid rgba(234, 88, 12, 0.3);
+          }
+          
+          .tag-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+          }
+          
+          .skill-tag:hover {
+            background: linear-gradient(to right, #ea580c, #facc15);
+            color: white;
+            transform: scale(1.05);
+          }
+        </style>
+      </section>
 
 
 
