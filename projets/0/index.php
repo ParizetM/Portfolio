@@ -32,8 +32,10 @@
 
         <!-- Project header -->
         <header class="mb-12">
-            <h1 class="text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl mb-4">
-                Montaza
+            <h1 class="text-3xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl mb-4 flex">
+                <img src="<?= $project['logo'] ?>" alt="logo" class="mr-2 h-16 w-auto object-contain">
+
+                <?= $project['title'] ?>
             </h1>
             <div class="flex flex-wrap gap-3 mb-6">
                 <?php
@@ -44,7 +46,7 @@
                 ?>
             </div>
             <p class="text-gray-400 text-xl max-w-3xl">
-                Logiciel de gestion interne sur mesure développé pour Atlantis Montaza, permettant de remplacer les processus papier et tableaux Excel par une solution numérique intuitive et centralisée.
+                Logiciel de gestion interne sur mesure développé pour Atlantis Montaza, permettant de remplacer les processus papier et tableaux Excel par une solution globale numérique intuitive et centralisée.
             </p>
         </header>
 
@@ -110,7 +112,7 @@
                         <div class="bg-orange-600 p-2 rounded-lg mr-4">
                             <img src="assets/icons/groups_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
                         </div>
-                        <h3 class="text-xl font-bold text-white">Gestion des utilisateurs et rôles</h3>
+                        <h3 class="text-xl font-bold text-white">Gestion des utilisateurs et rôles sécurisé</h3>
                     </div>
                     <p class="text-gray-300">
                         Système complet de gestion des permissions basé sur les rôles des employés dans l'entreprise, garantissant que chaque utilisateur n'accède qu'aux fonctionnalités pertinentes pour son poste. L'administration peut créer, modifier et désactiver des comptes, ainsi que personnaliser les droits d'accès.
@@ -123,7 +125,7 @@
                             <img src="assets/icons/package_2_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
 
                         </div>
-                        <h3 class="text-xl font-bold text-white">Gestion des stocks</h3>
+                        <h3 class="text-xl font-bold text-white">Gestion des stocks optimisée</h3>
                     </div>
                     <p class="text-gray-300">
                         Module sophistiqué permettant de suivre l'inventaire avec différentes unités de mesure adaptées aux spécificités de chaque type de produit (mètres linéaires, unités, volume, etc.). Le système gère automatiquement les conversions et les alertes de stock bas, optimisant ainsi l'approvisionnement.
@@ -136,7 +138,7 @@
                             <img src="assets/icons/request_quote_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
 
                         </div>
-                        <h3 class="text-xl font-bold text-white">Demandes de prix</h3>
+                        <h3 class="text-xl font-bold text-white">Demandes de prix rationalisée</h3>
                     </div>
                     <p class="text-gray-300">
                         Interface permettant aux utilisateurs de créer des demandes de prix détaillées, avec génération automatique de documents PDF professionnels et envoi par email aux fournisseurs. Le système intègre un suivi des réponses et facilite la comparaison des offres pour une prise de décision optimisée.
@@ -149,7 +151,7 @@
                             <img src="assets/icons/local_shipping_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
 
                         </div>
-                        <h3 class="text-xl font-bold text-white">Gestion des commandes</h3>
+                        <h3 class="text-xl font-bold text-white">Gestion accélérée des commandes</h3>
                     </div>
                     <p class="text-gray-300">
                         Module complet permettant de transformer facilement une demande de prix en commande, avec suivi du statut, historique des modifications, et génération automatique des bons de commande au format PDF. Le système est intégré à la gestion des stocks pour mettre à jour automatiquement l'inventaire à la réception des marchandises.
@@ -188,14 +190,14 @@
                 </p>
                 <h4 class="text-lg font-semibold text-white mb-2">Solution:</h4>
                 <p class="text-gray-300">
-                    J'ai pris le temps de discuter individuellement avec chaque utilisateur pour comprendre leurs besoins spécifiques et leurs contraintes. En organisant mon travail de manière structurée, j'ai pu identifier les points communs et les priorités, ce qui m'a permis de concevoir une solution qui répond aux attentes de tous de manière équilibrée.
+                    J'ai discuté individuellement avec chaque utilisateur pour comprendre leurs besoins spécifiques et leurs contraintes. En organisant mon travail de manière structurée, j'ai pu identifier les points communs et les priorités, ce qui m'a permis de concevoir une solution qui répond aux attentes de tous.
                 </p>
             </div>
 
             <div class="bg-stone-800/50 p-6 rounded-lg mb-6">
                 <h3 class="text-xl font-bold text-orange-500 mb-3">Défi 2: Gestion autonome du projet</h3>
                 <p class="text-gray-300 mb-4">
-                    En tant que seul développeur sur ce projet d'envergure, j'ai dû assumer toutes les responsabilités, de l'analyse des besoins au déploiement final, en passant par le développement et les tests. La charge de travail était considérable et exigeait une organisation exemplaire.
+                    En tant que seul développeur sur ce projet d'envergure, j'ai dû assumer toutes les responsabilités, de l'analyse des besoins au déploiement final, en passant par la phase de développement et de test. La charge de travail était considérable et exigeait une organisation exemplaire.
                 </p>
                 <h4 class="text-lg font-semibold text-white mb-2">Solution:</h4>
                 <p class="text-gray-300">
@@ -222,16 +224,25 @@
                 <p class="text-gray-300 mb-4">
                     Ce projet d'alternance a été extrêmement formateur, tant sur le plan technique que sur le plan humain et professionnel. Il m'a permis de développer des compétences essentielles qui me serviront tout au long de ma carrière.
                 </p>
-                <ul class="list-disc pl-6 text-gray-300 space-y-2">
-                    <li>Maîtrise approfondie du pattern MVC et des principes de programmation orientée objet avec Laravel</li>
-                    <li>Conception et optimisation de bases de données complexes avec PostgreSQL</li>
-                    <li>Développement d'interfaces utilisateur intuitives avec JavaScript et TailwindCSS</li>
-                    <li>Analyse des besoins et traduction en spécifications techniques</li>
-                    <li>Communication efficace avec différents types d'utilisateurs et parties prenantes</li>
-                    <li>Gestion de projet en autonomie et priorisation des tâches</li>
-                    <li>Résolution de problèmes complexes et capacité d'adaptation face aux imprévus</li>
-                    <li>Capacité à concilier les besoins parfois contradictoires de différents utilisateurs</li>
-                </ul>
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-orange-500 mb-3">Compétences techniques</h3>
+                    <ul class="list-disc pl-6 text-gray-300 space-y-2">
+                        <li>Maîtrise approfondie du pattern MVC et des principes de programmation orientée objet avec Laravel</li>
+                        <li>Conception et optimisation de bases de données complexes avec PostgreSQL</li>
+                        <li>Développement d'interfaces utilisateur intuitives avec JavaScript et TailwindCSS</li>
+                        <li>Analyse des besoins et traduction en spécifications techniques</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-orange-500 mb-3">Compétences transversales</h3>
+                    <ul class="list-disc pl-6 text-gray-300 space-y-2">
+                        <li>Communication efficace avec différents types d'utilisateurs et parties prenantes</li>
+                        <li>Gestion de projet en autonomie et priorisation des tâches</li>
+                        <li>Résolution de problèmes complexes et capacité d'adaptation face aux imprévus</li>
+                        <li>Capacité à concilier les besoins parfois contradictoires de différents utilisateurs</li>
+                    </ul>
+                </div>
             </div>
         </section>
 

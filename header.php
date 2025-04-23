@@ -2,23 +2,24 @@
 
 <header id="header" class="flex justify-between items-center p-2 bg-stone-700 shadow-lg sticky top-0 z-50 transition-transform duration-500">
     <div class="flex items-center gap-6">
-        <a href="https://agfagoofay.fr">
-            <img src="assets/icons/arrow_back.svg" alt="" />
-        </a>
+        <button onclick="window.history.back()" class="cursor-pointer hover:scale-105 transition duration-300 hidden sm:block">
+            <img src="assets/icons/arrow_back.svg" alt="Retour" />
+        </button>
         <a
             href="index.php"
             class="flex items-center gap-6 hover:scale-105 transform hover:shadow-lg hover:bg-stone-800 p-2 rounded-full transition duration-300">
             <img
-                src="assets/icons/Avatar-rounded.svg"
-                alt="Avatar"
-                class=" w-10 h-10" />
+            src="assets/icons/Avatar-rounded.svg"
+            alt="Avatar"
+            class=" w-10 h-10" />
             <p class="text-white text-2xl font-bold">Martin Parizet</p>
         </a>
-    </div>
+        </div>
     <nav class="flex items-center">
         <a
             href="index.php"
-            class="text-gray-400 ml-4 hover:text-white transition duration-300">Accueil</a>
+            class="text-gray-400 ml-4 hover:text-white transition duration-300 hidden sm:block
+            ">Accueil</a>
             <a
             href="index.php?page=projets"
             class="text-gray-400 ml-4 hover:text-white transition duration-300">Mes projets</a>

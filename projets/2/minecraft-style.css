@@ -1,0 +1,12 @@
+.minecraft-btn {
+    background-image: url('medias/Bouton_minecraft.png');
+    font-family: 'minecraft';
+    border-color: #AAA #565656 #565656 #AAA;
+    outline: 2px solid #000;
+    cursor: url('medias/pioche.png') 0 16, auto;
+}
+
+.minecraft-btn:hover {
+    background-image: url('medias/Bouton_minecraft_hover.png');
+    border-color: #BDC6FF #59639A #59639A #BDC6FF;
+}
