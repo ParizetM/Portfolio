@@ -25,7 +25,7 @@
     <!-- ========================================
          SECTION À PROPOS
     ======================================== -->
-    <section id="about" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
+    <section id="about" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section mt-16">
       <div class="text-center pl-0 md:pl-24">
         <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
           Martin Parizet
