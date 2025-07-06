@@ -12,7 +12,9 @@
 
 
 
-  <div class="col-span-3 text-gra</div>y-300 ">
+  <div class="col-span-3 text-gray-300 ">
+
+
     <section id="about" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
       <div class="text-center">
         <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
@@ -186,7 +188,7 @@
         Technologies & Outils
       </h1>
 
-      <div class="max-w-4xl mx-auto w-full overflow-x-hidden">
+      <div class="max-w-4xl mx-auto w-full ">
         <!-- Tech bubbles that float in a pattern -->
         <div class="skill-container relative h-[600px] w-full rounded-xl p-4 mb-12">
           <?php
@@ -195,11 +197,11 @@
           $clickableFiles = file_exists($clickableDir) ? array_diff(scandir($clickableDir), array('..', '.')) : [];
 
           // Directory for non-clickable technologies
-            $nonClickableDir1 = __DIR__ . '/assets/icons/techno-autre/language';
-            $nonClickableDir2 = __DIR__ . '/assets/icons/techno-autre/outil';
-            $nonClickableFiles1 = file_exists($nonClickableDir1) ? array_diff(scandir($nonClickableDir1), array('..', '.')) : [];
-            $nonClickableFiles2 = file_exists($nonClickableDir2) ? array_diff(scandir($nonClickableDir2), array('..', '.')) : [];
-            $nonClickableFiles = array_merge($nonClickableFiles1, $nonClickableFiles2);
+          $nonClickableDir1 = __DIR__ . '/assets/icons/techno-autre/language';
+          $nonClickableDir2 = __DIR__ . '/assets/icons/techno-autre/outil';
+          $nonClickableFiles1 = file_exists($nonClickableDir1) ? array_diff(scandir($nonClickableDir1), array('..', '.')) : [];
+          $nonClickableFiles2 = file_exists($nonClickableDir2) ? array_diff(scandir($nonClickableDir2), array('..', '.')) : [];
+          $nonClickableFiles = array_merge($nonClickableFiles1, $nonClickableFiles2);
 
           // Random positions and sizes for bubbles
           $positions = [];
@@ -238,11 +240,11 @@
               $positions[] = ['x' => $x, 'y' => $y, 'radius' => $radius];
               // Non-clickable version
               echo '<div class="skill-bubble" style="--size: ' . $size . 'px; --x: ' . $x . '%; --y: ' . $y . '%; --delay: ' . $delay . 's;">';
-                if (in_array($file, $nonClickableFiles1)) {
+              if (in_array($file, $nonClickableFiles1)) {
                 echo '<img src="assets/icons/techno-autre/language/' . $file . '" alt="' . $fileName . '" class="skill-icon">';
-                } elseif (in_array($file, $nonClickableFiles2)) {
+              } elseif (in_array($file, $nonClickableFiles2)) {
                 echo '<img src="assets/icons/techno-autre/outil/' . $file . '" alt="' . $fileName . '" class="skill-icon">';
-                }
+              }
               echo '<span>' . ucfirst($fileName) . '</span>';
               echo '</div>';
             }
@@ -297,60 +299,60 @@
       </div>
       <!-- Technology Details Table -->
 
-    <div class="w-auto">
-      <div class="bg-gradient-to-r from-stone-800/50 to-stone-600/50 rounded-lg p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Languages -->
-        <div class="mb-8">
-          <h3 class="text-xl font-bold text-orange-500 mb-4 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-            </svg>
-            Langages
-          </h3>
-          <div class="grid grid-cols-2 gap-x-6 gap-y-3">
-            <?php
-            foreach ($clickableFiles as $file) {
-              $fileName = pathinfo($file, PATHINFO_FILENAME);
-              $nom_techno = str_replace(' ', '_', $fileName);
-              echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
-              include 'base.php';
-              echo "</div>";
-            }
-            
-            foreach ($nonClickableFiles1 as $file) {
-              $fileName = pathinfo($file, PATHINFO_FILENAME);
-              echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
-              echo "<img src='assets/icons/techno-autre/language/$file' alt='$fileName' class='w-5 h-5'>";
-              echo "<span class='text-gray-300'>$fileName</span>";
-              echo "</div>";
-            }
-            ?>
-          </div>
-        </div>
+      <div class="w-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Languages -->
+          <div class="bg-gradient-to-r from-stone-700/30 to-stone-700/30 rounded-lg p-6 md:p-8   border border-stone-700">
+            <h3 class="text-xl font-bold text-orange-500 mb-4 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              Langages
+            </h3>
+            <div class="grid grid-cols-2 gap-x-6 gap-y-3">
+              <?php
+              foreach ($clickableFiles as $file) {
+                $fileName = pathinfo($file, PATHINFO_FILENAME);
+                $nom_techno = str_replace(' ', '_', $fileName);
+                echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
+                include 'base.php';
+                echo "</div>";
+              }
 
-        <!-- Tools -->
-        <div>
-          <h3 class="text-xl font-bold text-orange-500 mb-4 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            Outils
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
-            <?php
-            foreach ($nonClickableFiles2 as $file) {
-              $fileName = pathinfo($file, PATHINFO_FILENAME);
-              echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
-              echo "<img src='assets/icons/techno-autre/outil/$file' alt='$fileName' class='w-5 h-5'>";
-              echo "<span class='text-gray-300'>$fileName</span>";
-              echo "</div>";
-            }
-            ?>
+              foreach ($nonClickableFiles1 as $file) {
+                $fileName = pathinfo($file, PATHINFO_FILENAME);
+                echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
+                echo "<img src='assets/icons/techno-autre/language/$file' alt='$fileName' class='w-5 h-5'>";
+                echo "<span class='text-gray-300'>$fileName</span>";
+                echo "</div>";
+              }
+              ?>
+            </div>
+          </div>
+              
+          <!-- Tools -->
+          <div class="bg-gradient-to-r from-stone-700/30 to-stone-700/30 rounded-lg p-6 md:p-8  gap-6 border border-stone-700">
+            <h3 class="text-xl font-bold text-orange-500 mb-4 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Outils
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+              <?php
+              foreach ($nonClickableFiles2 as $file) {
+                $fileName = pathinfo($file, PATHINFO_FILENAME);
+                echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
+                echo "<img src='assets/icons/techno-autre/outil/$file' alt='$fileName' class='w-5 h-5'>";
+                echo "<span class='text-gray-300'>$fileName</span>";
+                echo "</div>";
+              }
+              ?>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
 
     </section>
@@ -436,6 +438,10 @@
             </li>
 
           </ul>
+        </li>
+        <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
+          <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
+          <a href="#competences" class="nav-link1 ">Technologies & Outils</a>
         </li>
         <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
           <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>

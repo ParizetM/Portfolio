@@ -153,3 +153,36 @@ body {
     right: 5px;
     font-size: 12px;
 } */
+
+.glass-container {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.glass-effect h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.glass-effect p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
