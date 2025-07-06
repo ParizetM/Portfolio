@@ -27,6 +27,5 @@ if (($handle = fopen("projets.csv", "r")) !== false) {
   include 'route.php';
  include 'footer.php' ?>
 </body>
-<script src="assets/js/scripts.js"></script>
 
 </html>

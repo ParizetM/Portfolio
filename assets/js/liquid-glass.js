@@ -1,4 +1,3 @@
-
 // ===============================
 // Composant Liquid Glass en JavaScript Vanilla
 // Applique un effet de verre liquide aux éléments ayant la classe 'liquid-glass'.
@@ -9,25 +8,24 @@
 function isLiquidGlassSupported() {
   const ua = navigator.userAgent;
   // Détection Firefox
+  console.log("User Agent:", ua);
+  // Détection Firefox ou Safari
   if (/firefox/i.test(ua)) return false;
-  // Détection mobile
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua)) return false;
+  if (/safari/i.test(ua) && !/chrome|chromium|android/i.test(ua)) return false;
   // Test backdrop-filter + url support
-  const test = document.createElement('div');
-  test.style.backdropFilter = 'url(#test) blur(1px)';
-  return test.style.backdropFilter.includes('url');
+
 }
 
-(function() {
-  'use strict';
-  
+(function () {
+  "use strict";
+
   // Si un gestionnaire LiquidGlass existe déjà, le détruire pour éviter les doublons
   // Check if liquid glass manager already exists and destroy it
   if (window.liquidGlassManager) {
     window.liquidGlassManager.destroy();
-    console.log('Previous liquid glass effects removed.');
+    console.log("Previous liquid glass effects removed.");
   }
-  
+
   // Utility functions
 
   // Fonction d'interpolation douce pour les transitions
@@ -45,17 +43,21 @@ function isLiquidGlassSupported() {
   function roundedRectSDF(x, y, width, height, radius) {
     const qx = Math.abs(x) - width + radius;
     const qy = Math.abs(y) - height + radius;
-    return Math.min(Math.max(qx, qy), 0) + length(Math.max(qx, 0), Math.max(qy, 0)) - radius;
+    return (
+      Math.min(Math.max(qx, qy), 0) +
+      length(Math.max(qx, 0), Math.max(qy, 0)) -
+      radius
+    );
   }
 
   // Représente une coordonnée de texture
   function texture(x, y) {
-    return { type: 't', x, y };
+    return { type: "t", x, y };
   }
 
   // Génère un identifiant unique pour chaque instance
   function generateId() {
-    return 'liquid-glass-' + Math.random().toString(36).substr(2, 9);
+    return "liquid-glass-" + Math.random().toString(36).substr(2, 9);
   }
 
   // ===============================
@@ -74,10 +76,10 @@ function isLiquidGlassSupported() {
       this.fragment = options.fragment || ((uv) => texture(uv.x, uv.y));
       this.canvasDPI = 1;
       this.id = generateId();
-      
+
       this.mouse = { x: 0, y: 0 }; // Position de la souris normalisée
       this.mouseUsed = false;
-      
+
       this.setupShader();
       this.setupEventListeners();
       this.updateShader();
@@ -87,26 +89,26 @@ function isLiquidGlassSupported() {
     setupShader() {
       // Si le support n'est pas là, fallback visuel
       if (!isLiquidGlassSupported()) {
-        this.element.style.background = 'rgba(36,36,36,0.5)';
-        this.element.style.backdropFilter = '';
-        this.element.style.boxShadow = '';
-        this.element.style.overflow = '';
-        this.element.classList.add('liquid-glass-fallback');
+        this.element.style.background = "rgba(36,36,36,0.5)";
+        this.element.style.backdropFilter = "";
+        this.element.style.boxShadow = "";
+        this.element.style.overflow = "";
+        this.element.classList.add("liquid-glass-fallback");
         return;
       }
       // Récupère le style courant de l'élément
       const computedStyle = window.getComputedStyle(this.element);
       const currentPosition = computedStyle.position;
-      
+
       // S'assure que l'élément est positionné (pour le filter)
-      if (currentPosition === 'static') {
-        this.element.style.position = 'relative';
+      if (currentPosition === "static") {
+        this.element.style.position = "relative";
       }
-      
+
       // Applique les styles d'effet verre liquide
-      this.element.style.overflow = 'hidden';
+      this.element.style.overflow = "hidden";
       this.element.style.backdropFilter = `url(#${this.id}_filter) blur(0.25px) brightness(1.2) saturate(1.1)`;
-      
+
       // Ajoute un effet de verre si aucun box-shadow n'est défini
       if (!this.element.style.boxShadow) {
         this.element.style.boxShadow = `
@@ -117,10 +119,10 @@ function isLiquidGlassSupported() {
       }
 
       // Crée le SVG filter pour l'effet de déplacement
-      this.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-      this.svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-      this.svg.setAttribute('width', '0');
-      this.svg.setAttribute('height', '0');
+      this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      this.svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      this.svg.setAttribute("width", "0");
+      this.svg.setAttribute("height", "0");
       this.svg.style.cssText = `
         position: fixed;
         top: 0;
@@ -129,28 +131,40 @@ function isLiquidGlassSupported() {
         z-index: 9998;
       `;
 
-      const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-      const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
-      filter.setAttribute('id', `${this.id}_filter`);
-      filter.setAttribute('filterUnits', 'userSpaceOnUse');
-      filter.setAttribute('colorInterpolationFilters', 'sRGB');
-      filter.setAttribute('x', '0');
-      filter.setAttribute('y', '0');
-      filter.setAttribute('width', this.width.toString());
-      filter.setAttribute('height', this.height.toString());
+      const defs = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "defs"
+      );
+      const filter = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "filter"
+      );
+      filter.setAttribute("id", `${this.id}_filter`);
+      filter.setAttribute("filterUnits", "userSpaceOnUse");
+      filter.setAttribute("colorInterpolationFilters", "sRGB");
+      filter.setAttribute("x", "0");
+      filter.setAttribute("y", "0");
+      filter.setAttribute("width", this.width.toString());
+      filter.setAttribute("height", this.height.toString());
 
       // feImage : image de déplacement générée par le canvas
-      this.feImage = document.createElementNS('http://www.w3.org/2000/svg', 'feImage');
-      this.feImage.setAttribute('id', `${this.id}_map`);
-      this.feImage.setAttribute('width', this.width.toString());
-      this.feImage.setAttribute('height', this.height.toString());
+      this.feImage = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "feImage"
+      );
+      this.feImage.setAttribute("id", `${this.id}_map`);
+      this.feImage.setAttribute("width", this.width.toString());
+      this.feImage.setAttribute("height", this.height.toString());
 
       // feDisplacementMap : applique la déformation à l'image source
-      this.feDisplacementMap = document.createElementNS('http://www.w3.org/2000/svg', 'feDisplacementMap');
-      this.feDisplacementMap.setAttribute('in', 'SourceGraphic');
-      this.feDisplacementMap.setAttribute('in2', `${this.id}_map`);
-      this.feDisplacementMap.setAttribute('xChannelSelector', 'R');
-      this.feDisplacementMap.setAttribute('yChannelSelector', 'G');
+      this.feDisplacementMap = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "feDisplacementMap"
+      );
+      this.feDisplacementMap.setAttribute("in", "SourceGraphic");
+      this.feDisplacementMap.setAttribute("in2", `${this.id}_map`);
+      this.feDisplacementMap.setAttribute("xChannelSelector", "R");
+      this.feDisplacementMap.setAttribute("yChannelSelector", "G");
 
       filter.appendChild(this.feImage);
       filter.appendChild(this.feDisplacementMap);
@@ -164,29 +178,29 @@ function isLiquidGlassSupported() {
       }
 
       // Crée le canvas caché pour générer la displacement map
-      this.canvas = document.createElement('canvas');
+      this.canvas = document.createElement("canvas");
       this.canvas.width = this.width * this.canvasDPI;
       this.canvas.height = this.height * this.canvasDPI;
-      this.canvas.style.display = 'none';
+      this.canvas.style.display = "none";
 
-      this.context = this.canvas.getContext('2d');
+      this.context = this.canvas.getContext("2d");
     }
 
     // Ajoute les écouteurs d'événements (souris, resize)
     setupEventListeners() {
       // Met à jour la position de la souris pour l'effet interactif
-      this.element.addEventListener('mousemove', (e) => {
+      this.element.addEventListener("mousemove", (e) => {
         const rect = this.element.getBoundingClientRect();
         this.mouse.x = (e.clientX - rect.left) / rect.width;
         this.mouse.y = (e.clientY - rect.top) / rect.height;
-        
+
         if (this.mouseUsed) {
           this.updateShader();
         }
       });
 
       // Met à jour la taille du canvas et du filter lors du redimensionnement de la fenêtre
-      window.addEventListener('resize', () => {
+      window.addEventListener("resize", () => {
         this.width = this.element.offsetWidth;
         this.height = this.element.offsetHeight;
         this.canvas.width = this.width * this.canvasDPI;
@@ -202,7 +216,7 @@ function isLiquidGlassSupported() {
         get: (target, prop) => {
           this.mouseUsed = true;
           return target[prop];
-        }
+        },
       });
 
       this.mouseUsed = false;
@@ -218,10 +232,7 @@ function isLiquidGlassSupported() {
       for (let i = 0; i < data.length; i += 4) {
         const x = (i / 4) % w;
         const y = Math.floor(i / 4 / w);
-        const pos = this.fragment(
-          { x: x / w, y: y / h },
-          mouseProxy
-        );
+        const pos = this.fragment({ x: x / w, y: y / h }, mouseProxy);
         const dx = pos.x * w - x;
         const dy = pos.y * h - y;
         maxScale = Math.max(maxScale, Math.abs(dx), Math.abs(dy));
@@ -243,20 +254,27 @@ function isLiquidGlassSupported() {
 
       // Applique l'image générée au filter SVG
       this.context.putImageData(new ImageData(data, w, h), 0, 0);
-      this.feImage.setAttributeNS('http://www.w3.org/1999/xlink', 'href', this.canvas.toDataURL());
-      this.feDisplacementMap.setAttribute('scale', (maxScale / this.canvasDPI).toString());
+      this.feImage.setAttributeNS(
+        "http://www.w3.org/1999/xlink",
+        "href",
+        this.canvas.toDataURL()
+      );
+      this.feDisplacementMap.setAttribute(
+        "scale",
+        (maxScale / this.canvasDPI).toString()
+      );
     }
 
     // Nettoie l'effet et supprime les éléments SVG/canvas
     destroy() {
       // Supprime le backdrop filter
-      this.element.style.backdropFilter = '';
-      
+      this.element.style.backdropFilter = "";
+
       // Supprime le SVG
       if (this.svg && this.svg.parentNode) {
         this.svg.remove();
       }
-      
+
       // Supprime le canvas
       if (this.canvas && this.canvas.parentNode) {
         this.canvas.remove();
@@ -285,35 +303,46 @@ function isLiquidGlassSupported() {
 
     // Applique l'effet à tous les éléments déjà présents
     applyToExistingElements() {
-      const elements = document.querySelectorAll('.liquid-glass');
-      elements.forEach(element => this.applyEffect(element));
+      const elements = document.querySelectorAll(".liquid-glass");
+      elements.forEach((element) => this.applyEffect(element));
     }
 
     // Observe le DOM pour appliquer/retirer l'effet sur les nouveaux éléments
     setupMutationObserver() {
       this.observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
-          if (mutation.type === 'childList') {
+          if (mutation.type === "childList") {
             mutation.addedNodes.forEach((node) => {
               if (node.nodeType === Node.ELEMENT_NODE) {
                 // Si le noeud ajouté a la classe, applique l'effet
-                if (node.classList && node.classList.contains('liquid-glass')) {
+                if (node.classList && node.classList.contains("liquid-glass")) {
                   this.applyEffect(node);
                 }
                 // Applique aussi à tous les enfants .liquid-glass
-                const childElements = node.querySelectorAll && node.querySelectorAll('.liquid-glass');
+                const childElements =
+                  node.querySelectorAll &&
+                  node.querySelectorAll(".liquid-glass");
                 if (childElements) {
-                  childElements.forEach(element => this.applyEffect(element));
+                  childElements.forEach((element) => this.applyEffect(element));
                 }
               }
             });
           }
           // Si la classe change, applique ou retire l'effet
-          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          if (
+            mutation.type === "attributes" &&
+            mutation.attributeName === "class"
+          ) {
             const target = mutation.target;
-            if (target.classList.contains('liquid-glass') && !this.shaders.has(target)) {
+            if (
+              target.classList.contains("liquid-glass") &&
+              !this.shaders.has(target)
+            ) {
               this.applyEffect(target);
-            } else if (!target.classList.contains('liquid-glass') && this.shaders.has(target)) {
+            } else if (
+              !target.classList.contains("liquid-glass") &&
+              this.shaders.has(target)
+            ) {
               this.removeEffect(target);
             }
           }
@@ -324,7 +353,7 @@ function isLiquidGlassSupported() {
         childList: true,
         subtree: true,
         attributes: true,
-        attributeFilter: ['class']
+        attributeFilter: ["class"],
       });
     }
 
@@ -339,17 +368,11 @@ function isLiquidGlassSupported() {
         fragment: (uv, mouse) => {
           const ix = uv.x - 0.5;
           const iy = uv.y - 0.5;
-          const distanceToEdge = roundedRectSDF(
-            ix,
-            iy,
-            0.3,
-            0.2,
-            0.6
-          );
+          const distanceToEdge = roundedRectSDF(ix, iy, 0.3, 0.2, 0.6);
           const displacement = smoothStep(0.8, 0, distanceToEdge - 0.15);
           const scaled = smoothStep(0, 1, displacement);
           return texture(ix * scaled + 0.5, iy * scaled + 0.5);
-        }
+        },
       });
 
       this.shaders.set(element, shader);
@@ -381,27 +404,26 @@ function isLiquidGlassSupported() {
   function initLiquidGlass() {
     if (!isLiquidGlassSupported()) {
       // Applique le fallback à tous les .liquid-glass existants
-      document.querySelectorAll('.liquid-glass').forEach(el => {
-        el.style.background = 'rgba(36,36,36,0.7)';
-        el.style.boxShadow = `
-          0 4px 8px rgba(0, 0, 0, 0.25),
-          0 -10px 25px inset rgba(0, 0, 0, 0.15),
-          0 -1px 4px 1px inset rgba(255, 254, 74, 0.2)
-        `;
-        el.classList.add('liquid-glass-fallback');
+      document.querySelectorAll(".liquid-glass").forEach((el) => {
+
+        el.classList.add("liquid-glass-fallback");
       });
-      console.warn('Liquid Glass non supporté sur ce navigateur. Fallback appliqué.');
+      console.warn(
+        "Liquid Glass non supporté sur ce navigateur. Fallback appliqué."
+      );
       return;
     }
     const manager = new LiquidGlassManager();
-    console.log('Composant Liquid Glass initialisé ! Ajoutez la classe "liquid-glass" à n\'importe quel div pour appliquer l\'effet.');
+    console.log(
+      "Composant Liquid Glass initialisé ! Ajoutez la classe \"liquid-glass\" à n'importe quel div pour appliquer l'effet."
+    );
     window.liquidGlassManager = manager; // Pour contrôle externe
     window.LiquidGlassShader = LiquidGlassShader; // Pour usage avancé
   }
 
   // Lance l'initialisation quand le DOM est prêt
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initLiquidGlass);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initLiquidGlass);
   } else {
     initLiquidGlass();
   }

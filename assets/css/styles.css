@@ -216,10 +216,18 @@ body {
     /* Utilisation de 9999px pour un effet de bord arrondi */
     cursor: pointer;
 }
+
 .liquid-btn::hover {
-    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18), 0 0 0 2px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.18), 0 0 0 2px rgba(0, 0, 0, 0.12);
 }
 
+.liquid-glass-fallback {
+    background: rgba(36, 36, 36, 0.7);
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.25),
+        0 -10px 25px inset rgba(0, 0, 0, 0.15),
+        0 -1px 4px 1px inset rgba(255, 254, 74, 0.2);
+}
 
 
 

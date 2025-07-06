@@ -9,6 +9,7 @@
 <div class="circle top-880 right-160 bg-orange-600/20"></div>
 <div class="circle top-1085 right-270 bg-orange-600/20"></div>
 <div class="circle top-1020 right-50 bg-orange-600/20"></div>
+<script src="assets/js/scripts.js"></script>
 
 
 
@@ -177,7 +178,7 @@
 
       <div class="max-w-4xl mx-auto w-full">
         <!-- Conteneur des bulles technologiques flottantes -->
-        <div class="skill-container relative h-[600px] w-full rounded-xl p-4 mb-12 overflow-hidden md:overflow-visible">
+        <div class="skill-container relative h-[600px] w-full rounded-xl p-4 pr-8 mb-12 overflow-x-hidden md:overflow-x-visible overflow-y-visible">
           <?php
           // Inclusion des fonctions pour les technologies
           include_once 'includes/tech-functions.php';
