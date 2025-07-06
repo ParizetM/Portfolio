@@ -10,9 +10,16 @@ function isLiquidGlassSupported() {
   // Détection Firefox
   console.log("User Agent:", ua);
   // Détection Firefox ou Safari
-  if (/firefox/i.test(ua)) return false;
-  if (/safari/i.test(ua) && !/chrome|chromium|android/i.test(ua)) return false;
+
   // Test backdrop-filter + url support
+  return (
+    "backdropFilter" in document.body.style &&
+    (window.CSS && CSS.supports("backdrop-filter", "blur(1px)")) &&
+    !/Firefox/i.test(ua) &&
+    !/Mobile/i.test(ua) &&
+    !/iPad|iPhone|iPod/.test(ua)
+  );
+  // Note: iPad/iPhone/iPod sont exclus car ils n'ont pas de support
 
 }
 
