@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks2 = document.querySelectorAll(".nav-link-2");
     const upperLi = document.querySelector("#parent_li");
 
+
+    
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
