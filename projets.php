@@ -11,7 +11,7 @@ $fileNames = array_map(function ($file) {
 <div class="circle top-160 right-0 bg-yellow-400/20"></div>
 
 
-<section class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
+<section class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section mt-16">
     <div class="text-center mb-8">
         <h1 class="text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
             Mes Projets
