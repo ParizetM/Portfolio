@@ -7,7 +7,8 @@
 <div class="circle top-640 right-160 bg-yellow-400/20"></div>
 <div class="circle top-780 right-100 bg-orange-600/20"></div>
 <div class="circle top-880 right-160 bg-orange-600/20"></div>
-<div class="circle top-1000 right-160 bg-orange-600/20"></div>
+<div class="circle top-1085 right-270 bg-orange-600/20"></div>
+<div class="circle top-1020 right-50 bg-orange-600/20"></div>
 
 
 
@@ -25,11 +26,11 @@
          SECTION À PROPOS
     ======================================== -->
     <section id="about" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
-      <div class="text-center">
+      <div class="text-center pl-0 md:pl-24">
         <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
           Martin Parizet
         </h1>
-        <p class="max-w-2xl mx-auto text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl">
+        <p class="max-w-2xl mx-auto text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl ">
           PORTFOLIO 2025 - développeur
         </p>
         <p class="max-w-2xl mx-auto text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl p-6">
@@ -368,11 +369,13 @@
               placeholder="Votre message..."></textarea>
           </div>
           <div class="flex items-center justify-center">
-            <button
-              type="submit"
-              class="bg-gradient-to-r from-orange-600 to-orange-600 py-2 px-4 rounded-full transition duration-300 hover:shadow-lg hover:to-yellow-400 hover:cursor-pointer text-white">
-              Envoyer
-            </button>
+            <div onmousemove="followMouse(this, event)" onmouseleave="resetPosition(this)">
+              <button
+                type="submit"
+                class="bg-gradient-to-r from-orange-600 to-orange-600 py-2 px-4 rounded-full transition duration-300 hover:shadow-lg hover:to-yellow-400 hover:cursor-pointer text-white">
+                Envoyer
+              </button>
+            </div>
           </div>
         </form>
       </div>

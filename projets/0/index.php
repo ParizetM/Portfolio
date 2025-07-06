@@ -51,13 +51,13 @@
         </header>
 
         <!-- Project details -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            <div class="lg:col-span-2" id="gallery1">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 ">
+            <div class="lg:col-span-2 " id="gallery1">
                 <a href="projets/0/medias/dashboard.png" data-pswp-width="1600" data-pswp-height="850" target="_blank">
                     <img src="projets/0/medias/dashboard.png" alt="Capture d'écran de Montaza" class="rounded-lg shadow-lg w-full object-cover h-auto hover:opacity-75 transition duration-300">
                 </a>
             </div>
-            <div class="bg-stone-800/50 p-6 rounded-lg">
+            <div class="bg-stone-800/50 p-6 liquid-glass rounded-lg ">
                 <h2 class="text-2xl font-bold mb-4 text-orange-500">Détails du projet</h2>
 
                 <div class="mb-4">
@@ -91,7 +91,7 @@
         </div>
 
         <!-- Project description -->
-        <section class="mb-12">
+        <section class="mb-12 ">
             <h2 class="text-3xl font-bold mb-6 text-white">Le projet</h2>
             <div class="prose prose-lg prose-invert max-w-none">
                 <p class="text-gray-300 mb-4">

@@ -17,12 +17,12 @@
  */
 function generateTechBubble($file, $fileName, $size, $x, $y, $delay, $isClickable = false, $iconPath = '') {
     if ($isClickable) {
-        echo '<a href="index.php?page=projets&techno=' . $fileName . '" target="_blank" class="skill-bubble clickable" style="--size: ' . $size . 'px; --x: ' . $x . '%; --y: ' . $y . '%; --delay: ' . $delay . 's;">';
+        echo '<a href="index.php?page=projets&techno=' . $fileName . '" target="_blank" class="skill-bubble clickable liquid-glass" style="--size: ' . $size . 'px; --x: ' . $x . '%; --y: ' . $y . '%; --delay: ' . $delay . 's;">';
         echo '<img src="assets/icons/technos/' . $file . '" alt="' . $fileName . '" class="skill-icon">';
         echo '<span>' . ucfirst($fileName) . '</span>';
         echo '</a>';
     } else {
-        echo '<div class="skill-bubble" style="--size: ' . $size . 'px; --x: ' . $x . '%; --y: ' . $y . '%; --delay: ' . $delay . 's;">';
+        echo '<div class="skill-bubble liquid-glass" style="--size: ' . $size . 'px; --x: ' . $x . '%; --y: ' . $y . '%; --delay: ' . $delay . 's;">';
         echo '<img src="' . $iconPath . $file . '" alt="' . $fileName . '" class="skill-icon">';
         echo '<span>' . ucfirst($fileName) . '</span>';
         echo '</div>';

@@ -4,8 +4,8 @@
 
 ob_start();
 ?>
-<div class="mb-4 border-2 border-gray-500 rounded-lg p-3 sm:p-6 max-w-2xl mx-auto">
-    <a class="flex flex-col sm:flex-row items-start sm:items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer transition-all duration-200 hover:scale-105 "
+<div class="mb-4 border-2 border-gray-500  p-3 sm:p-6 max-w-2xl mx-auto liquid-glass rounded-lg">
+    <a class="flex flex-col sm:flex-row items-start sm:items-center justify-between hover:shadow-lg rounded-xl p-2 hover:bg-stone-700/50 hover:cursor-pointer transition-all duration-200 hover:scale-105 liquid-btn"
         title="Afficher le projet" href="index.php?page=projet&id=<?= $project['id'] ?>">
         <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center mb-2 sm:mb-0">
             <img src="<?= $project['logo'] ?>" alt="logo" class="w-5 sm:w-6 mr-2">

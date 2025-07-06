@@ -310,8 +310,11 @@
   .top-880 {
     top: calc(var(--spacing) * 880);
   }
-  .top-1000 {
-    top: calc(var(--spacing) * 1000);
+  .top-1020 {
+    top: calc(var(--spacing) * 1020);
+  }
+  .top-1085 {
+    top: calc(var(--spacing) * 1085);
   }
   .right-0 {
     right: calc(var(--spacing) * 0);
@@ -327,6 +330,9 @@
   }
   .right-160 {
     right: calc(var(--spacing) * 160);
+  }
+  .right-270 {
+    right: calc(var(--spacing) * 270);
   }
   .left-10 {
     left: calc(var(--spacing) * 10);
@@ -640,6 +646,9 @@
   .h-1 {
     height: calc(var(--spacing) * 1);
   }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
   .h-4\/5 {
     height: calc(4/5 * 100%);
   }
@@ -697,14 +706,23 @@
   .w-0 {
     width: calc(var(--spacing) * 0);
   }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
   .w-1\/3 {
     width: calc(1/3 * 100%);
   }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
   .w-2\/3 {
     width: calc(2/3 * 100%);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
   .w-4\/5 {
     width: calc(4/5 * 100%);
@@ -1460,6 +1478,9 @@
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
   .bg-black\/10 {
     background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
   }
@@ -1514,6 +1535,9 @@
   .bg-stone-900 {
     background-color: var(--color-stone-900);
   }
+  .bg-yellow-400 {
+    background-color: var(--color-yellow-400);
+  }
   .bg-yellow-400\/20 {
     background-color: color-mix(in oklab, var(--color-yellow-400) 20%, transparent);
   }
@@ -1559,8 +1583,16 @@
     --tw-gradient-from: var(--color-pink-500);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .from-stone-700 {
+    --tw-gradient-from: var(--color-stone-700);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
   .from-stone-700\/30 {
     --tw-gradient-from: color-mix(in oklab, var(--color-stone-700) 30%, transparent);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-stone-800 {
+    --tw-gradient-from: var(--color-stone-800);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-stone-800\/50 {
@@ -1584,6 +1616,10 @@
   }
   .to-pink-500 {
     --tw-gradient-to: var(--color-pink-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-stone-700 {
+    --tw-gradient-to: var(--color-stone-700);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-stone-700\/30 {
@@ -1838,6 +1874,9 @@
   }
   .pb-20 {
     padding-bottom: calc(var(--spacing) * 20);
+  }
+  .pl-0 {
+    padding-left: calc(var(--spacing) * 0);
   }
   .pl-5 {
     padding-left: calc(var(--spacing) * 5);
@@ -2682,6 +2721,11 @@
       margin-bottom: calc(var(--spacing) * 0);
     }
   }
+  .sm\:hidden {
+    @media (width >= 40rem) {
+      display: none;
+    }
+  }
   .sm\:inline-block {
     @media (width >= 40rem) {
       display: inline-block;
@@ -2785,9 +2829,19 @@
       display: grid;
     }
   }
+  .md\:h-8 {
+    @media (width >= 48rem) {
+      height: calc(var(--spacing) * 8);
+    }
+  }
   .md\:h-20 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:w-8 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 8);
     }
   }
   .md\:w-20 {
@@ -2843,6 +2897,11 @@
   .md\:pl-2 {
     @media (width >= 48rem) {
       padding-left: calc(var(--spacing) * 2);
+    }
+  }
+  .md\:pl-24 {
+    @media (width >= 48rem) {
+      padding-left: calc(var(--spacing) * 24);
     }
   }
   .md\:text-start {
@@ -3001,7 +3060,7 @@ body {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .skill-bubble.clickable:hover {
-  background: linear-gradient(135deg, rgba(255, 73, 0, 0.7), rgba(255, 184, 34, 0.7));
+  background: linear-gradient(135deg, rgba(255, 73, 0, 0.4), rgba(255, 184, 34, 0.4));
   transform: scale(1.1) translateZ(20px);
   box-shadow: 0 0 40px rgba(255, 73, 0, 0.4);
   z-index: 10;
@@ -3024,9 +3083,6 @@ body {
 .skill-bubble.clickable:hover {
   transform: scale(1.1);
 }
-.liquid-glass {
-  border-radius: calc(infinity * 1px);
-}
 .floating-nav {
   position: fixed;
   top: 20px;
@@ -3036,10 +3092,27 @@ body {
   transform-origin: center;
   overflow: hidden;
 }
-.floating-nav:hover::before {
+.liquid-glass {
+  background-color: rgba(36, 36, 36, 0.1);
+}
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle 100px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 184, 34, 0.15) 0%, rgba(255, 184, 34, 0.08) 30%, transparent 60%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.liquid-glass:hover::before {
   opacity: 1;
 }
-.floating-nav:hover {
+.liquid-glass:hover {
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
 }
 .nav-left {
@@ -3065,6 +3138,9 @@ body {
   border-radius: 9999px;
   cursor: pointer;
 }
+.liquid-btn::hover {
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18), 0 0 0 2px rgba(0,0,0,0.12);
+}
 @media (max-width: 768px) {
   .nav-left {
     left: 10px;
@@ -3075,7 +3151,7 @@ body {
     padding: 12px 16px;
   }
   .nav-content {
-    gap: 8px;
+    gap: 4px;
   }
   .glass-btn {
     padding: 6px 12px;
@@ -3093,9 +3169,7 @@ body {
   }
   .nav-left {
     top: 15px;
-  }
-  .nav-right {
-    top: 75px;
+    padding: 8px 0;
   }
 }
 @property --tw-translate-x {

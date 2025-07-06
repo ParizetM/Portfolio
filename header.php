@@ -7,14 +7,17 @@
             <img src="assets/icons/arrow_back.svg" alt="Retour" class="w-5 h-5 " />
         </button>
         <a href="index.php" class=" liquid-btn flex items-center gap-2">
-            <img src="assets/icons/Avatar-rounded.svg" alt="Avatar" class="w-8 h-8" />
-            <span class="font-bold text-lg">Martin Parizet</span>
+            <img src="assets/icons/Avatar-rounded.svg" alt="Avatar" class="w-5 h-5 md:w-8 md:h-8 " />
+            <span class="font-bold text-lg whitespace-nowrap ">Martin Parizet</span>
         </a>
+        <a href="index.php?page=projets" class="glass-btn liquid-btn inline-block sm:hidden">Projets</a>
+        <a href="index.php#contact" class="glass-btn liquid-btn inline-block sm:hidden">Contact</a>
+        <a href="cv.php" class="glass-btn liquid-btn inline-block sm:hidden">CV</a>
     </div>
 </div>
 
 <!-- Navigation flottante droite avec effet liquid glass -->
-<div class="floating-nav nav-right liquid-glass rounded-full">
+<div class="floating-nav nav-right liquid-glass rounded-full hidden-mobile">
     <div class="nav-content">
         <a href="index.php" class="glass-btn hidden-mobile liquid-btn">Accueil</a>
         <a href="index.php?page=projets" class="glass-btn liquid-btn">Projets</a>
@@ -139,9 +142,9 @@ function followMouse(element, event) {
     const mouseX = ((event.clientX - rect.left) / rect.width) * 100;
     const mouseY = ((event.clientY - rect.top) / rect.height) * 100;
     
-    // // Mettre à jour les variables CSS pour le gradient
-    // element.style.setProperty('--mouse-x', mouseX + '%');
-    // element.style.setProperty('--mouse-y', mouseY + '%');
+    // Mettre à jour les variables CSS pour le gradient
+    element.style.setProperty('--mouse-x', mouseX + '%');
+    element.style.setProperty('--mouse-y', mouseY + '%');
     
     if (!state.animating) {
         state.animating = true;
@@ -161,23 +164,22 @@ function resetPosition(element) {
 }
 
 function animateNav(element, state) {
-    // Lerp vers la cible
-    // Calcul du facteur d'interpolation en fonction de la taille de l'élément
-    const minSize = 40; // taille minimale pour éviter division par zéro
-    const maxStrength = 0.25; // force max pour petits éléments
-    const minStrength = 0.07; // force min pour grands éléments
-
+    // Limiter le déplacement maximal à 5% de la taille de l'élément
     const rect = element.getBoundingClientRect();
-    const width = Math.max(rect.width, minSize);
-    const height = Math.max(rect.height, minSize);
+    const maxOffsetX = rect.width * 0.017;
+    const maxOffsetY = rect.height * 0.025;
 
-    // Plus l'élément est petit, plus le facteur est élevé
-    const lerpX = minStrength + (maxStrength - minStrength) * (0.7 - Math.min(width / 200, 1));
-    const lerpY = minStrength + (maxStrength - minStrength) * (1 - Math.min(height / 200, 1));
+    // Clamp la cible dans les limites
+    state.targetX = Math.max(-maxOffsetX, Math.min(state.targetX, maxOffsetX));
+    state.targetY = Math.max(-maxOffsetY, Math.min(state.targetY, maxOffsetY));
 
-    state.currentX += (state.targetX - state.currentX) * lerpX;
-    state.currentY += (state.targetY - state.currentY) * lerpY;
+    // Lerp standard
+    const lerpFactor = 0.08;
+    state.currentX += (state.targetX - state.currentX) * lerpFactor;
+    state.currentY += (state.targetY - state.currentY) * lerpFactor;
+
     element.style.transform = `translate(${state.currentX}px, ${state.currentY}px)`;
+
     if (Math.abs(state.currentX - state.targetX) > 0.5 || Math.abs(state.currentY - state.targetY) > 0.5) {
         requestAnimationFrame(() => animateNav(element, state));
     } else {

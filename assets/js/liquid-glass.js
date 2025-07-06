@@ -5,6 +5,19 @@
 // Inspiré du travail de Shu Ding (https://github.com/shuding/liquid-glass) en 2025.
 // ===============================
 
+// Détection du support backdrop-filter + SVG filter + détection Firefox/mobile
+function isLiquidGlassSupported() {
+  const ua = navigator.userAgent;
+  // Détection Firefox
+  if (/firefox/i.test(ua)) return false;
+  // Détection mobile
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua)) return false;
+  // Test backdrop-filter + url support
+  const test = document.createElement('div');
+  test.style.backdropFilter = 'url(#test) blur(1px)';
+  return test.style.backdropFilter.includes('url');
+}
+
 (function() {
   'use strict';
   
@@ -72,6 +85,15 @@
 
     // Prépare le SVG filter, le canvas et applique les styles à l'élément
     setupShader() {
+      // Si le support n'est pas là, fallback visuel
+      if (!isLiquidGlassSupported()) {
+        this.element.style.background = 'rgba(36,36,36,0.5)';
+        this.element.style.backdropFilter = '';
+        this.element.style.boxShadow = '';
+        this.element.style.overflow = '';
+        this.element.classList.add('liquid-glass-fallback');
+        return;
+      }
       // Récupère le style courant de l'élément
       const computedStyle = window.getComputedStyle(this.element);
       const currentPosition = computedStyle.position;
@@ -90,7 +112,7 @@
         this.element.style.boxShadow = `
           0 4px 8px rgba(0, 0, 0, 0.25),
           0 -10px 25px inset rgba(0, 0, 0, 0.15),
-          0 -1px 4px 1px inset rgba(255, 255, 255, 0.5)
+          0 -1px 4px 1px inset rgba(255, 254, 74, 0.2)
         `;
       }
 
@@ -357,6 +379,20 @@
   // Initialize the Liquid Glass Manager
   // Initialise le gestionnaire Liquid Glass et expose les classes globalement
   function initLiquidGlass() {
+    if (!isLiquidGlassSupported()) {
+      // Applique le fallback à tous les .liquid-glass existants
+      document.querySelectorAll('.liquid-glass').forEach(el => {
+        el.style.background = 'rgba(36,36,36,0.7)';
+        el.style.boxShadow = `
+          0 4px 8px rgba(0, 0, 0, 0.25),
+          0 -10px 25px inset rgba(0, 0, 0, 0.15),
+          0 -1px 4px 1px inset rgba(255, 254, 74, 0.2)
+        `;
+        el.classList.add('liquid-glass-fallback');
+      });
+      console.warn('Liquid Glass non supporté sur ce navigateur. Fallback appliqué.');
+      return;
+    }
     const manager = new LiquidGlassManager();
     console.log('Composant Liquid Glass initialisé ! Ajoutez la classe "liquid-glass" à n\'importe quel div pour appliquer l\'effet.');
     window.liquidGlassManager = manager; // Pour contrôle externe
