@@ -8,7 +8,6 @@
 function isLiquidGlassSupported() {
   const ua = navigator.userAgent;
   // Détection Firefox
-  console.log("User Agent:", ua);
   // Détection Firefox ou Safari
 
   // Test backdrop-filter + url support
@@ -30,7 +29,7 @@ function isLiquidGlassSupported() {
   // Check if liquid glass manager already exists and destroy it
   if (window.liquidGlassManager) {
     window.liquidGlassManager.destroy();
-    console.log("Previous liquid glass effects removed.");
+    // console.log("Previous liquid glass effects removed.");
   }
 
   // Utility functions
@@ -421,9 +420,9 @@ function isLiquidGlassSupported() {
       return;
     }
     const manager = new LiquidGlassManager();
-    console.log(
-      "Composant Liquid Glass initialisé ! Ajoutez la classe \"liquid-glass\" à n'importe quel div pour appliquer l'effet."
-    );
+    // console.log(
+    //   "Composant Liquid Glass initialisé ! Ajoutez la classe \"liquid-glass\" à n'importe quel div pour appliquer l'effet."
+    // );
     window.liquidGlassManager = manager; // Pour contrôle externe
     window.LiquidGlassShader = LiquidGlassShader; // Pour usage avancé
   }
