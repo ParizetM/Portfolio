@@ -7,7 +7,7 @@ $projects = [];
 // Lecture du fichier CSV
 if (($handle = fopen($csvFile, 'r')) !== false) {
     // Parcourir chaque ligne du fichier CSV
-    while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+    while (($data = fgetcsv($handle, 1000, ',', '"','\\')) !== false) {
         $projects[] = [
             'id' => $data[0],
             'title' => $data[1],

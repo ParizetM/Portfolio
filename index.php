@@ -15,7 +15,7 @@
 
 $projects = [];
 if (($handle = fopen("projets.csv", "r")) !== false) {
-  while (($data = fgetcsv($handle, 1000, ",")) !== false) {
+  while (($data = fgetcsv($handle, 1000, ",", '"','\\')) !== false) {
     $projects[] = $data;
   }
   fclose($handle);
