@@ -22,10 +22,24 @@ if (($handle = fopen("projets.csv", "r")) !== false) {
 }
 ?>
 <body class="bg-stone-800 text-gray-300 ">
-  <?php include 'header.php';
+  <?php
+  include 'header.php';
   $page = $_GET['page'] ?? 'home';
-  include 'route.php';
- include 'footer.php' ?>
+  $pageFile = __DIR__ . '/' . $page . '.php';
+
+  if (is_readable($pageFile)) {
+    include 'route.php';
+  } else {
+    http_response_code(404);
+    if (is_readable(__DIR__ . '/404.php')) {
+      include '404.php';
+    } else {
+      echo '<main class="p-8"><h1 class="text-3xl font-bold text-white">404 - Page non trouvée</h1></main>';
+    }
+  }
+
+  include 'footer.php';
+  ?>
 </body>
 
 </html>

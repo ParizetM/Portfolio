@@ -31,12 +31,57 @@
         <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
           Martin Parizet
         </h1>
+        <?php
+        $birth = new DateTime('2005-08-26');
+        $now = new DateTime();
+        $age = $now->diff($birth)->y;
+        ?>
         <p class="max-w-2xl mx-auto text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl ">
-          PORTFOLIO 2025 - développeur
+            PORTFOLIO <?php echo date('Y'); ?> - développeur - <?php echo $age; ?> ans -
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=Gu%C3%A9rande+France"
+            onclick="openMap(event)"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-orange-500 hover:underline"
+            aria-label="Ouvrir la carte de Guérande"
+            >
+              Guérande (44)
+            </a>
+
+            <script>
+            function openMap(e) {
+              var query = encodeURIComponent('Guérande France');
+              var ua = navigator.userAgent || navigator.vendor || window.opera;
+              var url;
+
+              // iOS -> Apple Maps
+              if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+              url = 'maps://?q=' + query;
+              }
+              // Android -> geo: or Google Maps app
+              else if (/Android/.test(ua)) {
+              url = 'geo:0,0?q=' + query;
+              }
+              // Desktop / fallback -> Google Maps web
+              else {
+              url = 'https://www.google.com/maps/search/?api=1&query=' + query;
+              }
+
+              // Try to open the URL (apps will handle their schemes); fallback to href if blocked
+              try {
+              window.open(url, '_blank');
+              } catch (err) {
+              // fallback to the original href
+              window.open('https://www.google.com/maps/search/?api=1&query=' + query, '_blank');
+              }
+              e.preventDefault();
+            }
+            </script>
         </p>
+        
         <p class="max-w-2xl mx-auto text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl p-6">
-          Développeur, je crée des sites web et applications.
-          Actuellement en BTS SIO SLAM à l'IIA Saint-Nazaire, je cherche à améliorer mes compétences et à participer à des projets suceptible de développer mes compétences.
+          Développeur passionné, je conçois des expériences web et des applications élégantes et performantes. Actuellement en Licence Informatique (développement) à l'IIA Saint-Nazaire.
         </p>
         <div class="rounded-full flex items-center justify-center">
           <div onmousemove="followMouse(this, event)" onmouseleave="resetPosition(this)" class="rounded-full w-fit">
@@ -56,10 +101,53 @@
         Mon parcours
       </h1>
 
+
+
+      <!-- Alternance Atraga -->
+      <div class="ml-5 w-full md:w-auto">
+        <div class="p-2 border-r-2 border-dashed text-right float-right bg-stone-600/50 rounded-l-lg w-full pr-5 md:pr-2">
+          <p class="text-orange-500 text-sm md:text-base">Septembre 2025 - Actuellement</p>
+          <h2 class="text-lg font-bold text-white md:text-xl">
+            <span class="text-gray-300 text-base md:text-lg">ALTERNANCE</span><br>
+            Astraga <span class="text-gray-300 text-sm md:text-base">Nantes</span>
+          </h2>
+          <p class="text-gray-400 text-sm md:text-base">Développement Symfony (agence spécialisée WordPress, mission Symfony)</p>
+        </div>
+      </div>
+      <div class="p-2 justify-center items-center bg-stone-600/50 h-full rounded-r-lg hidden md:flex">
+        <!-- Logo Atraga si disponible -->
+        <svg viewBox="0 0 169 169" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-16 h-16 m-1">
+          <title>Slice</title>
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <path d="M84.29,168.58 C37.81,168.58 0,130.77 0,84.29 C0,37.81 37.81,0 84.29,0 C130.77,0 168.58,37.81 168.58,84.29 C168.58,130.77 130.77,168.58 84.29,168.58 Z M84.29,14 C45.53,14 14,45.53 14,84.29 C14,123.05 45.53,154.58 84.29,154.58 C123.05,154.58 154.58,123.05 154.58,84.29 C154.58,45.53 123.05,14 84.29,14 Z" id="Shape" fill="#6C63FC" fill-rule="nonzero"></path>
+            <circle id="Oval" fill="#6C63FC" fill-rule="nonzero" cx="84.29" cy="97.68" r="7.61"></circle>
+            <polygon id="Path" fill="#6C63FC" fill-rule="nonzero" points="71.5 90.05 84.29 55.17 97.07 90.05 102.45 104.87 107.11 117.77 123.48 117.77 91.82 34.14 76.76 34.14 45.1 117.77 61.47 117.77 66.13 104.87"></polygon>
+          </g>
+        </svg>
+      </div>
+      <div class="w-0"></div>
+
+
+      <!-- Licence Informatique (alignée à droite comme Pixelcréation) -->
+      <div class="w-0"></div>
+      <div class="p-2 justify-center items-center bg-stone-600/50 h-full rounded-l-lg hidden md:flex">
+        <img src="assets/icons/logo-iia-200x200.png" alt="Logo IIA" class="w-15 h-15 m-1 rounded-full md:w-20 md:h-20 sm:w-12 sm:h-12">
+      </div>
+      <div class="mr-5 w-full md:w-auto">
+        <div class="block p-2 border-l-2 border-dashed bg-stone-600/50 mr-6 rounded-r-lg w-full pl-5 md:pl-2">
+          <p class="text-orange-500 text-sm md:text-base">Dès septembre 2025</p>
+          <h2 class="text-lg font-bold text-white md:text-xl">
+            <span class="text-gray-300 text-base md:text-lg">FORMATION</span><br>
+            Licence Informatique option Développement <span class="text-gray-300 text-sm md:text-base">IIA Saint-Nazaire</span>
+          </h2>
+          <p class="text-gray-400 text-sm md:text-base">Développement web et logiciel, approfondissement des compétences techniques</p>
+        </div>
+      </div>
+
       <!-- Alternance Montaza -->
       <div class="ml-5 w-full md:w-auto">
         <div class="p-2 border-r-2 border-dashed text-right float-right bg-stone-600/50 rounded-l-lg w-full pr-5 md:pr-2">
-          <p class="text-orange-500 text-sm md:text-base">Septembre 2024 - Actuellement</p>
+          <p class="text-orange-500 text-sm md:text-base">Septembre 2024 - Août 2025</p>
           <h2 class="text-lg font-bold text-white md:text-xl">
             <span class="text-gray-300 text-base md:text-lg">ALTERNANCE</span><br>
             Atlantis Montaza <span class="text-gray-300 text-sm md:text-base">Trignac</span>
@@ -71,7 +159,6 @@
         <img src="assets/icons/montaza.svg" alt="Logo Montaza" class="w-15 h-15 m-1">
       </div>
       <div class="w-0"></div>
-
       <!-- Espacement -->
       <div class="w-0"></div>
       <div class="p-2 justify-center items-center bg-stone-600/50 h-full rounded-l-lg hidden md:flex">

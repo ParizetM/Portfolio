@@ -1,8 +1,81 @@
+/**
+ * Liquid Glass — résumé d'utilisation et API
+ *
+ * Module qui applique un effet "verre liquide" via un SVG filter + canvas de displacement.
+ * L'initialisation est automatique au chargement du DOM. Pour chaque élément ayant la classe
+ * CSS "liquid-glass", un shader est créé qui génère une displacement map (canvas caché)
+ * et l'applique au moyen d'un <filter> SVG (feImage + feDisplacementMap). Le module expose
+ * aussi un gestionnaire global pour contrôle manuel.
+ *
+ * Principales caractéristiques
+ * - Activation automatique : le gestionnaire s'initialise au DOMContentLoaded et applique
+ *   l'effet à tous les éléments .liquid-glass existants.
+ * - Observation du DOM : un MutationObserver applique/retire automatiquement l'effet
+ *   quand des éléments sont ajoutés/supprimés ou quand la classe change.
+ * - Interaction souris : si la fonction de fragment lit la position de la souris, l'effet
+ *   devient interactif (détection via un proxy).
+ * - Redimensionnement : le shader redimensionne sa canvas lors du resize de la fenêtre.
+ * - Fallback : si le navigateur ne supporte pas l'approche (test de backdrop-filter / CSS.supports
+ *   et exclusion de Firefox / Mobile / iOS), la classe "liquid-glass-fallback" est ajoutée
+ *   et un style de substitution est appliqué.
+ *
+ * Comment appliquer l'effet (récap)
+ * 1. Ajouter la classe CSS "liquid-glass" à l'élément HTML voulu :
+ *    <div class="liquid-glass">...</div>
+ * 2. Le script s'initialise automatiquement et applique l'effet si le navigateur est supporté.
+ * 3. Si vous souhaitez un contrôle manuel, utiliser l'API exposée globalement (voir ci‑dessous).
+ * 4. Pour retirer l'effet d'un élément : supprimer la classe "liquid-glass" ou appeler la méthode
+ *    de suppression côté gestionnaire (window.liquidGlassManager.removeEffect(el)).
+ * 5. Pour arrêter complètement le gestionnaire et détruire tous les shaders :
+ *    window.liquidGlassManager.destroy()
+ *
+ * API publique exposée
+ * - window.liquidGlassManager : instance du gestionnaire (LiquidGlassManager) — méthodes utiles :
+ *     - applyEffect(element)      : applique l'effet à un élément DOM (si non déjà appliqué)
+ *     - removeEffect(element)     : retire l'effet d'un élément
+ *     - destroy()                 : détruit tous les shaders et arrête l'observation
+ * - window.LiquidGlassShader : classe shader (pour usages avancés / instanciations personnalisées)
+ *
+ * Options et personnalisation
+ * - Personnaliser la déformation : fournir une fonction "fragment" lors de la création d'un
+ *   LiquidGlassShader (ou via applyEffect si vous créez manuellement une instance). Signature :
+ *     fragment(uv, mouse) -> { x: number, y: number }
+ *   où uv = { x: 0..1, y: 0..1 } (coordonnées normalisées) et mouse = { x, y } (coordonnées
+ *   normalisées) si la fonction y accède.
+ * - La fonction doit retourner les coordonnées de texture de destination (coordonnées remappées).
+ * - Le shader interne fournit une utilité texture(x,y) qui construit l'objet attendu.
+ *
+ * Contraintes et compatibilité
+ * - Le module vérifie la présence de 'backdrop-filter' et CSS.supports("backdrop-filter", "blur(1px)").
+ * - Par défaut, Firefox, appareils mobiles et iOS sont exclus (fallback appliqué).
+ * - L'effet utilise un canvas en mémoire et une image encodée en dataURL pour feImage ; cela
+ *   a un coût en CPU/mémoire pour de grandes zones ou de nombreux éléments.
+ *
+ * Bonnes pratiques
+ * - Limiter le nombre d'éléments .liquid-glass simultanés pour préserver les performances.
+ * - Privilégier des dimensions modérées ou désactiver l'interaction si non nécessaire.
+ * - Tester sur les navigateurs cibles ; s'appuyer sur la classe "liquid-glass-fallback" pour
+ *   fournir un rendu alternatif cohérent.
+ *
+ * Exemple d'usage rapide
+ * - Automatique : ajoutez la classe CSS à un élément et laissez le script s'occuper du reste.
+ * - Manuel (contrôle avancé) :
+ *     const el = document.querySelector('#maCarte');
+ *     window.liquidGlassManager.applyEffect(el);
+ *     // Plus tard...
+ *     window.liquidGlassManager.removeEffect(el);
+ *
+ * Note : Ce commentaire résume l'usage et l'API du fichier liquid-glass.js — se référer au
+ * code source pour les détails d'implémentation et pour créer des fragments de déformation
+ * personnalisés.
+ */
 // ===============================
 // Composant Liquid Glass en JavaScript Vanilla
 // Applique un effet de verre liquide aux éléments ayant la classe 'liquid-glass'.
 // Inspiré du travail de Shu Ding (https://github.com/shuding/liquid-glass) en 2025.
 // ===============================
+
+
 
 // Détection du support backdrop-filter + SVG filter + détection Firefox/mobile
 function isLiquidGlassSupported() {
