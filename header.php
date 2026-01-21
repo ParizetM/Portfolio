@@ -1,7 +1,14 @@
 
 
+<?php
+// Ajout d'une classe spéciale si on est sur la page CV
+$isCV = false;
+if (isset($_SERVER['SCRIPT_NAME']) && (basename($_SERVER['SCRIPT_NAME']) === 'cv.php')) {
+    $isCV = true;
+}
+?>
 <!-- Navigation flottante gauche avec effet liquid glass -->
-<div class="floating-nav nav-left liquid-glass rounded-full">
+<div class="floating-nav nav-left liquid-glass rounded-full<?php if ($isCV) echo ' cv-margin-top'; ?>">
     <div class="nav-content">
         <button onclick="window.history.back()" class="hidden-mobile liquid-btn">
             <img src="assets/icons/arrow_back.svg" alt="Retour" class="w-5 h-5 " />
@@ -17,7 +24,7 @@
 </div>
 
 <!-- Navigation flottante droite avec effet liquid glass -->
-<div class="floating-nav nav-right liquid-glass rounded-full hidden-mobile">
+<div class="floating-nav nav-right liquid-glass rounded-full hidden-mobile<?php if ($isCV) echo ' cv-margin-top'; ?>">
     <div class="nav-content">
         <a href="index.php" class="glass-btn hidden-mobile liquid-btn">Accueil</a>
         <a href="index.php?page=projets" class="glass-btn liquid-btn">Projets</a>
@@ -189,7 +196,21 @@ function animateNav(element, state) {
         state.animating = false;
     }
 }
+
 </script>
+
+<?php if ($isCV): ?>
+<style>
+    .cv-margin-top {
+        margin-top: 40px !important;
+    }
+    @media (max-width: 640px) {
+        .cv-margin-top {
+            margin-top: 80px !important;
+        }
+    }
+</style>
+<?php endif; ?>
 
 <!-- Script Liquid Glass Component -->
 <script src="assets/js/liquid-glass.js"></script>

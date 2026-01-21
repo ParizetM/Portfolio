@@ -86,7 +86,6 @@ body {
     /* stone-700/50 background */
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    transform-style: preserve-3d;
     animation: float 6s ease-in-out infinite;
     animation-delay: var(--delay);
     transition: all 0.3s;
@@ -128,15 +127,15 @@ body {
 
 @keyframes float {
     0% {
-        transform: translateZ(0);
+        transform: translateY(0px);
     }
 
     50% {
-        transform: translateZ(30px);
+        transform: translateY(-8px);
     }
 
     100% {
-        transform: translateZ(0);
+        transform: translateY(0px);
     }
 }
 

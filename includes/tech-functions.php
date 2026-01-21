@@ -16,17 +16,24 @@
  * @param string $iconPath Chemin vers l'icône
  */
 function generateTechBubble($file, $fileName, $size, $x, $y, $delay, $isClickable = false, $iconPath = '') {
+    // Wrapper pour permettre au tooltip de dépasser
+    echo '<div class="skill-bubble-wrapper" style="--size: ' . $size . 'px; --x: ' . $x . '%; --y: ' . $y . '%;">';
+    
     if ($isClickable) {
-        echo '<a href="index.php?page=projets&techno=' . $fileName . '" target="_blank" class="skill-bubble clickable liquid-glass" style="--size: ' . $size . 'px; --x: ' . $x . '%; --y: ' . $y . '%; --delay: ' . $delay . 's;">';
+        echo '<a href="index.php?page=projets&techno=' . $fileName . '" target="_blank" class="skill-bubble clickable liquid-glass draggable-bubble" style="--delay: ' . $delay . 's;" data-tech-name="' . ucfirst($fileName) . '">';
         echo '<img src="assets/icons/technos/' . $file . '" alt="' . $fileName . '" class="skill-icon">';
-        echo '<span>' . ucfirst($fileName) . '</span>';
+        echo '<span class="tech-label hidden md:hidden">' . ucfirst($fileName) . '</span>';
         echo '</a>';
     } else {
-        echo '<div class="skill-bubble liquid-glass" style="--size: ' . $size . 'px; --x: ' . $x . '%; --y: ' . $y . '%; --delay: ' . $delay . 's;">';
+        echo '<div class="skill-bubble liquid-glass draggable-bubble" style="--delay: ' . $delay . 's;" data-tech-name="' . ucfirst($fileName) . '">';
         echo '<img src="' . $iconPath . $file . '" alt="' . $fileName . '" class="skill-icon">';
-        echo '<span>' . ucfirst($fileName) . '</span>';
+        echo '<span class="tech-label hidden md:hidden">' . ucfirst($fileName) . '</span>';
         echo '</div>';
     }
+    
+    // Tooltip en dehors de la bulle pour éviter overflow:hidden
+    echo '<span class="tech-tooltip">' . ucfirst($fileName) . '</span>';
+    echo '</div>';
 }
 
 /**
@@ -65,7 +72,7 @@ function getTechFiles($directory) {
  */
 function getTechConfig() {
     return [
-        'sizes' => [70, 75, 80, 85, 90, 95, 100, 110],
+        'sizes' => [90, 95, 100, 105, 110, 115, 120, 125],
         'delays' => [0, 0.3, 0.5, 0.7, 1, 1.5, 1.7, 2, 2.2, 2.5],
         'maxAttempts' => 10000
     ];

@@ -17,42 +17,54 @@ document.addEventListener("DOMContentLoaded", () => {
                         let parentLi = link.closest("li");
                         if (parentLi) {
                             parentLi.classList.remove("opacity-100");
-                            parentLi.querySelector("div")?.classList.remove("w-20");
+                            let div = parentLi.querySelector("div");
+                            if (div) {
+                                div.classList.remove("w-20", "xl:w-24", "2xl:w-28");
+                            }
                         }
                         if (link.getAttribute("href").includes(id)) {
                             if (parentLi) {
                                 parentLi.classList.add("opacity-100");
-                                parentLi.querySelector("div")?.classList.add("w-20");
+                                let div = parentLi.querySelector("div");
+                                if (div) {
+                                    div.classList.add("w-20", "xl:w-24", "2xl:w-28");
+                                }
                             }
                         }
                     });
 
                     // Gestion des navLinks2
                     upperLi.classList.remove("opacity-100");
-                    upperLi
-                        .querySelector("div")
-                        ?.querySelector("div")
-                        ?.classList.remove("w-20");
+                    let upperDiv = upperLi.querySelector("div")?.querySelector("div");
+                    if (upperDiv) {
+                        upperDiv.classList.remove("w-20", "xl:w-24", "2xl:w-28");
+                    }
                     navLinks2.forEach((link) => {
                         let parentLi = link.closest("li");
                     
                         if (link.getAttribute("href").includes(id)) {
                             if (parentLi) {
                                 parentLi.classList.add("opacity-100");
-                                parentLi.querySelector("div")?.classList.add("w-8");
+                                let div = parentLi.querySelector("div");
+                                if (div) {
+                                    div.classList.add("w-8", "xl:w-10", "2xl:w-12");
+                                }
                             }
                     
                             // Gestion du li au-dessus du ul
                             if (upperLi && upperLi.contains(parentLi)) {
                                 upperLi.classList.add("opacity-100");
-                                upperLi
-                                    .querySelector("div")
-                                    ?.querySelector("div")
-                                    ?.classList.add("w-20");
+                                let upperDiv = upperLi.querySelector("div")?.querySelector("div");
+                                if (upperDiv) {
+                                    upperDiv.classList.add("w-20", "xl:w-24", "2xl:w-28");
+                                }
                             }
                         } else if (parentLi) {
                             parentLi.classList.remove("opacity-100");
-                            parentLi.querySelector("div")?.classList.remove("w-8");
+                            let div = parentLi.querySelector("div");
+                            if (div) {
+                                div.classList.remove("w-8", "xl:w-10", "2xl:w-12");
+                            }
                         }
                     });
                 }

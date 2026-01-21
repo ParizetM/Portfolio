@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="assets/css/outpouts.css" />
 </head>
 <?php
+// Démarrer la session pour les messages du formulaire de contact
+session_start();
 
 $projects = [];
 if (($handle = fopen("projets.csv", "r")) !== false) {

@@ -14,7 +14,7 @@
     </head>
 
 <body class="bg-stone-800 text-gray-300 dark h-full">
-    <div>
+    <div class="">
     <?php include 'header.php' ?>
     </div>
     <iframe src="assets/documents/CV Martin Parizet.pdf" frameborder="0" class="w-full" style="height:100vh;"></iframe>

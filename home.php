@@ -109,7 +109,7 @@
           <p class="text-orange-500 text-sm md:text-base">Septembre 2025 - Actuellement</p>
           <h2 class="text-lg font-bold text-white md:text-xl">
             <span class="text-gray-300 text-base md:text-lg">ALTERNANCE</span><br>
-            Astraga <span class="text-gray-300 text-sm md:text-base">Nantes</span>
+            Astraga <span class="text-gray-300 text-sm md:text-base">La Baule</span>
           </h2>
           <p class="text-gray-400 text-sm md:text-base">Développement Symfony (agence spécialisée WordPress, mission Symfony)</p>
         </div>
@@ -258,142 +258,7 @@
     <!-- ========================================
          SECTION COMPÉTENCES & TECHNOLOGIES
     ======================================== -->
-    <section id="competences" class="flex flex-col items-center justify-center py-8 antialiased md:py-16 section">
-      <h1 class="text-center mb-8 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
-        Technologies & Outils
-      </h1>
-
-      <div class="max-w-4xl mx-auto w-full">
-        <!-- Conteneur des bulles technologiques flottantes -->
-        <div class="skill-container relative h-[600px] w-full rounded-xl p-4 pr-8 mb-12 overflow-x-hidden md:overflow-x-visible overflow-y-visible">
-          <?php
-          // Inclusion des fonctions pour les technologies
-          include_once 'includes/tech-functions.php';
-
-          // Configuration des répertoires d'icônes
-          $clickableDir = __DIR__ . '/assets/icons/technos';
-          $nonClickableDir1 = __DIR__ . '/assets/icons/techno-autre/language';
-          $nonClickableDir2 = __DIR__ . '/assets/icons/techno-autre/outil';
-
-          // Récupération des fichiers d'icônes
-          $clickableFiles = getTechFiles($clickableDir);
-          $nonClickableFiles1 = getTechFiles($nonClickableDir1);
-          $nonClickableFiles2 = getTechFiles($nonClickableDir2);
-          $nonClickableFiles = array_merge($nonClickableFiles1, $nonClickableFiles2);
-
-          // Configuration des paramètres d'affichage
-          $config = getTechConfig();
-          $positions = [];
-
-          // Génération des bulles non-cliquables
-          foreach ($nonClickableFiles as $file) {
-            $fileName = pathinfo($file, PATHINFO_FILENAME);
-            $size = $config['sizes'][array_rand($config['sizes'])];
-            $radius = $size / 2;
-            $delay = $config['delays'][array_rand($config['delays'])];
-            $attempts = 0;
-
-            do {
-              $x = rand(10, 90);
-              $y = rand(10, 80);
-              $overlap = checkOverlap($x, $y, $radius, $positions);
-              $attempts++;
-            } while ($overlap && $attempts < $config['maxAttempts']);
-
-            if (!$overlap || $attempts < $config['maxAttempts']) {
-              $positions[] = ['x' => $x, 'y' => $y, 'radius' => $radius];
-              $iconPath = in_array($file, $nonClickableFiles1) ? 'assets/icons/techno-autre/language/' : 'assets/icons/techno-autre/outil/';
-              generateTechBubble($file, $fileName, $size, $x, $y, $delay, false, $iconPath);
-            }
-          }
-
-          // Génération des bulles cliquables
-          foreach ($clickableFiles as $file) {
-            $fileName = pathinfo($file, PATHINFO_FILENAME);
-            $size = $config['sizes'][array_rand($config['sizes'])];
-            $radius = $size / 2;
-            $delay = $config['delays'][array_rand($config['delays'])];
-            $attempts = 0;
-
-            do {
-              $x = rand(10, 90);
-              $y = rand(10, 90);
-              $overlap = checkOverlap($x, $y, $radius, $positions);
-              $attempts++;
-            } while ($overlap && $attempts < $config['maxAttempts']);
-
-            if (!$overlap || $attempts < $config['maxAttempts']) {
-              $positions[] = ['x' => $x, 'y' => $y, 'radius' => $radius];
-              generateTechBubble($file, $fileName, $size, $x, $y, $delay, true);
-            }
-          }
-
-          // Affichage d'erreur si placement impossible
-          if ($attempts >= $config['maxAttempts']) {
-            echo '<p class="text-red-500">Erreur : Impossible de placer les bulles sans chevauchement.</p>';
-          }
-          ?>
-        </div>
-      </div>
-      <!-- Tableau détaillé des technologies -->
-      <div class="w-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Section Langages de programmation -->
-          <div class="bg-gradient-to-r from-stone-700/30 to-stone-700/30 rounded-lg p-6 md:p-8 border border-stone-700">
-            <h3 class="text-xl font-bold text-orange-500 mb-4 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-              Langages
-            </h3>
-            <div class="grid grid-cols-2 gap-x-6 gap-y-3">
-              <?php
-              // Affichage des technologies cliquables
-              foreach ($clickableFiles as $file) {
-                $fileName = pathinfo($file, PATHINFO_FILENAME);
-                $nom_techno = str_replace(' ', '_', $fileName);
-                echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
-                include 'base.php';
-                echo "</div>";
-              }
-
-              // Affichage des langages non-cliquables
-              foreach ($nonClickableFiles1 as $file) {
-                $fileName = pathinfo($file, PATHINFO_FILENAME);
-                echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
-                echo "<img src='assets/icons/techno-autre/language/$file' alt='$fileName' class='w-5 h-5'>";
-                echo "<span class='text-gray-300'>$fileName</span>";
-                echo "</div>";
-              }
-              ?>
-            </div>
-          </div>
-
-          <!-- Section Outils -->
-          <div class="bg-gradient-to-r from-stone-700/30 to-stone-700/30 rounded-lg p-6 md:p-8 border border-stone-700">
-            <h3 class="text-xl font-bold text-orange-500 mb-4 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              Outils
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
-              <?php
-              // Affichage des outils
-              foreach ($nonClickableFiles2 as $file) {
-                $fileName = pathinfo($file, PATHINFO_FILENAME);
-                echo "<div class='flex items-center gap-2 mb-2 transition duration-300 hover:transform hover:translate-x-1'>";
-                echo "<img src='assets/icons/techno-autre/outil/$file' alt='$fileName' class='w-5 h-5'>";
-                echo "<span class='text-gray-300'>$fileName</span>";
-                echo "</div>";
-              }
-              ?>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <?php include 'section-technos.php'; ?>
 
 
 
@@ -415,6 +280,8 @@
         </p>
         <p class="text-gray-500">Ou remplissez le formulaire ci-dessous :</p>
 
+        
+
         <!-- Formulaire de contact -->
         <form action="send_contact.php" method="post" class="max-w-3xl mx-auto text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl p-2">
           <div class="mb-4">
@@ -422,6 +289,7 @@
               type="text"
               id="name"
               name="name"
+              value="<?php echo htmlspecialchars($formData['name']); ?>"
               class="mt-1 block w-full p-2.5 bg-black/10 border rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 focus:ring-opacity-50 focus:border-opacity-50 sm:text-sm"
               required
               placeholder="Votre nom"
@@ -432,6 +300,7 @@
               type="email"
               id="email"
               name="email"
+              value="<?php echo htmlspecialchars($formData['email']); ?>"
               class="mt-1 block w-full p-2.5 bg-black/10 border rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
               required
               placeholder="Votre adresse e-mail"
@@ -442,6 +311,7 @@
               type="text"
               id="sujet"
               name="sujet"
+              value="<?php echo htmlspecialchars($formData['sujet']); ?>"
               class="mt-1 block w-full p-2.5 bg-black/10 border rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
               required
               placeholder="Sujet"
@@ -454,9 +324,35 @@
               rows="4"
               class="mt-1 block w-full p-2.5 bg-black/10 border rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
               required
-              placeholder="Votre message..."></textarea>
+              placeholder="Votre message..."><?php echo htmlspecialchars($formData['message']); ?></textarea>
           </div>
+          <?php
+        // Affichage des messages de succès
+        if (isset($_SESSION['contact_success'])) {
+          echo '<div class="bg-green-500/20 border border-green-500 text-green-200 px-4 py-3 rounded-lg mb-4">';
+          echo '<p>' . htmlspecialchars($_SESSION['contact_success']) . '</p>';
+          echo '</div>';
+          unset($_SESSION['contact_success']);
+        }
+
+        // Affichage des erreurs
+        if (isset($_SESSION['contact_errors'])) {
+          echo '<div class="bg-red-500/20 border border-red-500 text-red-200 px-4 py-3 rounded-lg mb-4">';
+          echo '<ul class="list-disc list-inside">';
+          foreach ($_SESSION['contact_errors'] as $error) {
+            echo '<li>' . htmlspecialchars($error) . '</li>';
+          }
+          echo '</ul>';
+          echo '</div>';
+          unset($_SESSION['contact_errors']);
+        }
+
+        // Récupération des données du formulaire en cas d'erreur
+        $formData = isset($_SESSION['form_data']) ? $_SESSION['form_data'] : ['name' => '', 'email' => '', 'sujet' => '', 'message' => ''];
+        unset($_SESSION['form_data']);
+        ?>
           <div class="flex items-center justify-center">
+            
             <div onmousemove="followMouse(this, event)" onmouseleave="resetPosition(this)">
               <button
                 type="submit"
@@ -474,59 +370,84 @@
   <!-- ========================================
        SIDEBAR DE NAVIGATION
   ======================================== -->
-  <div class="text-gray-300 col-4 hidden md:block border-l-2 border-stone-700 h-[70vh] sticky top-30 p-6 pr-0">
-    <div class="sticky top-50 font-bold">
+  <div class="text-gray-300 col-4 hidden md:block border-l-2 border-stone-700 h-[70vh] sticky top-30 p-6 pr-0 xl:pl-10 xl:pr-4">
+    <div class="sticky top-50 font-bold text-base xl:text-lg 2xl:text-xl">
       <!-- Menu de navigation principal -->
-      <ul>
-        <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
-          <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
+      <ul class="nav-menu-list space-y-1 xl:space-y-1.5">
+        <li class="nav-item flex items-center gap-4 xl:gap-6 opacity-50 hover:opacity-100 group transition-all duration-300">
+          <div class="h-1 xl:h-1.5 w-12 xl:w-16 2xl:w-20 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20 xl:group-hover:w-24 2xl:group-hover:w-28 transition-all duration-300"></div>
           <a href="#about" class="nav-link1 whitespace-nowrap">À propos</a>
         </li>
-        <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
-          <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
+        <li class="nav-item flex items-center gap-4 xl:gap-6 opacity-50 hover:opacity-100 group transition-all duration-300">
+          <div class="h-1 xl:h-1.5 w-12 xl:w-16 2xl:w-20 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20 xl:group-hover:w-24 2xl:group-hover:w-28 transition-all duration-300"></div>
           <a href="#parcours" class="nav-link1 whitespace-nowrap">Mon parcours</a>
         </li>
-        <li class="flex flex-col opacity-50 hover:opacity-100 group" id="parent_li">
-          <div class="flex items-center gap-4">
-            <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
+        <li class="nav-item flex flex-col opacity-50 hover:opacity-100 group transition-all duration-300" id="parent_li">
+          <div class="flex items-center gap-4 xl:gap-6">
+            <div class="h-1 xl:h-1.5 w-12 xl:w-16 2xl:w-20 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20 xl:group-hover:w-24 2xl:group-hover:w-28 transition-all duration-300"></div>
             <a href="#experience" class="whitespace-nowrap">Mon expérience</a>
           </div>
           <!-- Sous-menu -->
-          <ul class="ml-8 font-normal">
-            <li class="flex items-center gap-2 opacity-50 hover:opacity-100 group">
-              <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8 mr-2"></div>
+          <ul class="ml-8 xl:ml-12 font-normal space-y-1 xl:space-y-1.5 mt-1">
+            <li class="flex items-center gap-2 xl:gap-3 opacity-50 hover:opacity-100 group">
+              <div class="h-1 xl:h-1.5 w-6 xl:w-8 2xl:w-10 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8 xl:group-hover:w-10 2xl:group-hover:w-12 mr-2 transition-all duration-300"></div>
               <a href="#experience_professionnelle" class="nav-link-2 whitespace-nowrap">professionnelle</a>
             </li>
-            <li class="flex items-center gap-2 opacity-50 hover:opacity-100 group">
-              <div class="h-1 w-6 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8 mr-2"></div>
+            <li class="flex items-center gap-2 xl:gap-3 opacity-50 hover:opacity-100 group">
+              <div class="h-1 xl:h-1.5 w-6 xl:w-8 2xl:w-10 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-8 xl:group-hover:w-10 2xl:group-hover:w-12 mr-2 transition-all duration-300"></div>
               <a href="#experience_etudiante" class="nav-link-2 whitespace-nowrap">Étudiante</a>
             </li>
           </ul>
         </li>
-        <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
-          <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
-          <a href="#competences" class="nav-link1">Technologies & Outils</a>
+        <li class="nav-item flex items-center gap-4 xl:gap-6 opacity-50 hover:opacity-100 group transition-all duration-300">
+          <div class="h-1 xl:h-1.5 w-12 xl:w-16 2xl:w-20 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20 xl:group-hover:w-24 2xl:group-hover:w-28 transition-all duration-300"></div>
+          <a href="#competences" class="nav-link1">Ma Toolbox</a>
         </li>
-        <li class="flex items-center gap-4 opacity-50 hover:opacity-100 group">
-          <div class="h-1 w-12 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20"></div>
+        <li class="nav-item flex items-center gap-4 xl:gap-6 opacity-50 hover:opacity-100 group transition-all duration-300">
+          <div class="h-1 xl:h-1.5 w-12 xl:w-16 2xl:w-20 bg-gradient-to-r from-orange-600 from-30% to-yellow-400 to-60% rounded-lg group-hover:w-20 xl:group-hover:w-24 2xl:group-hover:w-28 transition-all duration-300"></div>
           <a href="#contact" class="nav-link1">Contact</a>
         </li>
       </ul>
+      
+      <style>
+        /* Effet de compactage et écartement au hover */
+        .nav-menu-list:has(.nav-item:hover) .nav-item:not(:hover) {
+          margin-top: 0.15rem;
+          margin-bottom: 0.15rem;
+        }
+        
+        .nav-menu-list .nav-item:hover {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+        
+        @media (min-width: 1280px) {
+          .nav-menu-list:has(.nav-item:hover) .nav-item:not(:hover) {
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+          }
+          
+          .nav-menu-list .nav-item:hover {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+          }
+        }
+      </style>
 
       <!-- Liens sociaux -->
-      <div class="flex items-center mt-4 gap-2">
+      <div class="flex items-center mt-6 xl:mt-8 gap-3 xl:gap-4">
         <a href="https://github.com/ParizetM" target="_blank">
-          <img src="assets/icons/github.svg" alt="GitHub" class="w-6 h-6 mt-4 transition duration-300 opacity-50 hover:opacity-100" />
+          <img src="assets/icons/github.svg" alt="GitHub" class="w-6 h-6 xl:w-8 xl:h-8 2xl:w-10 2xl:h-10 mt-4 transition duration-300 opacity-50 hover:opacity-100 hover:scale-110" />
         </a>
         <a href="https://www.linkedin.com/in/martin-parizet/" target="_blank">
-          <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-10 h-10 mt-4 transition duration-300 opacity-50 hover:opacity-100" />
+          <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-10 h-10 xl:w-12 xl:h-12 2xl:w-14 2xl:h-14 mt-4 transition duration-300 opacity-50 hover:opacity-100 hover:scale-110" />
         </a>
       </div>
 
       <!-- Informations de contact -->
-      <div class="flex flex-col gap-2 mt-4 text-orange-600">
-        <a href="mailto:parizetm@free.fr" class="opacity-50 hover:opacity-100">parizetm@free.fr</a>
-        <a href="tel:+33651051650" class="opacity-50 hover:opacity-100">+33 (0)6 51 05 16 50</a>
+      <div class="flex flex-col gap-2 xl:gap-3 mt-6 xl:mt-8 text-orange-600 text-sm xl:text-base 2xl:text-lg">
+        <a href="mailto:parizetm@free.fr" class="opacity-50 hover:opacity-100 transition-opacity duration-300">parizetm@free.fr</a>
+        <a href="tel:+33651051650" class="opacity-50 hover:opacity-100 transition-opacity duration-300">+33 (0)6 51 05 16 50</a>
       </div>
     </div>
   </div>
