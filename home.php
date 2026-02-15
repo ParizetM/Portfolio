@@ -280,7 +280,11 @@
         </p>
         <p class="text-gray-500">Ou remplissez le formulaire ci-dessous :</p>
 
-        
+        <?php
+        // Récupération des données du formulaire en cas d'erreur
+        $formData = isset($_SESSION['form_data']) ? $_SESSION['form_data'] : ['name' => '', 'email' => '', 'sujet' => '', 'message' => ''];
+        unset($_SESSION['form_data']);
+        ?>
 
         <!-- Formulaire de contact -->
         <form action="send_contact.php" method="post" class="max-w-3xl mx-auto text-gray-400 md:mb-12 md:text-lg mb-3 lg:mb-5 lg:text-xl p-2">
@@ -346,10 +350,6 @@
           echo '</div>';
           unset($_SESSION['contact_errors']);
         }
-
-        // Récupération des données du formulaire en cas d'erreur
-        $formData = isset($_SESSION['form_data']) ? $_SESSION['form_data'] : ['name' => '', 'email' => '', 'sujet' => '', 'message' => ''];
-        unset($_SESSION['form_data']);
         ?>
           <div class="flex items-center justify-center">
             
